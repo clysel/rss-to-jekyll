@@ -1,0 +1,38 @@
+---
+layout:     post
+title: 	    "Blog: Hjælp til selvhjælp - få lidt bedre styr på dit AD med New-ADReport"
+post_author:	    Jakob H. Heidelberg
+post_date:	    Sat, 21 Mar 2015 14:45:39 +0000
+post_site:	    www.version2.dk 
+post_link:	    http://www.version2.dk/blog/new-adreport-109508?utm_medium=feed&utm_source=version2.dk&utm_campaign=it_nyheder
+---
+<html><body><div><section class="body"><p>Jeg har udfærdiget et "lille" PowerShell script, New-ADReport.ps1, som udtrækker en række interessante informationer om brugere, computere og grupper i Active Directory (AD). Tanken er at give et hurtigt overblik over miljøets tilstand - primært med sikkerhed for øje.</p>
+
+<p>Man kan i store træk sammenligne det med de udtræk, som en klassisk IT-revision jævnligt foretager - med et twist. Der ses eksempelvis på politikker for adgangskoder, inaktive bruger- og computerkonti, anvendelsen af en række specielle rettigheder og konfigurationer, medlemskab af privilegerede grupper m.v.</p>
+
+<p>Forhåbentlig kan alle de, som ikke har investeret i mere forkromede værktøjer til den slags, få glæde af scriptet og måske anvende det til at få strammet lidt op på sikkerheden i Active Directory, evt. til at kontrollere at ens outsourcing-partner og/eller driftafdeling har styr på AD-relaterede processer, konfigurationer og tildelte rettigheder.</p>
+
+<p>En del informationer i rapporten kræver yderligere fortolkning og lidt forstand på Active Directory, herunder eksempelvis relaterede '<a href="https://technet.microsoft.com/en-us/library/dn487446.aspx">Best Practices</a>' og forsvar mod <a href="http://www.microsoft.com/en-us/download/details.aspx?id=36036">Pass-the-Hash</a> angreb.</p>
+
+<p>Scriptet leverer som udgangspunkt en enkel rapport i en almindelig tekstfil, som set i skærmdump nedenfor.</p>
+
+<p><figure class="plugin full zoomable"><img data-original-image="http://www.version2.dk/sites/v2/files/new-adreport_120_report.png" src="http://www.version2.dk/sites/v2/files/styles/article_620px_width/public/new-adreport_120_report.png?itok=cBVJiepI" alt=""/></figure></p>
+
+<p>Der er yderligere mulighed for at udtrække rå data i separate CSV filer, f.eks. til videre sortering og analyse i Excel.</p>
+
+<p>Scriptet kan eksekveres af en almindelig Domain User, såfremt denne har PowerShell, inkl. ActiveDirectory modulet, installeret. Yderligere detaljer om eksekvering er indeholdt i scriptet, omend grundlæggende forstand på PS eksekvering er påkrævet.</p>
+
+<p><figure class="plugin full zoomable"><img data-original-image="http://www.version2.dk/sites/v2/files/new-adreport_120.png" src="http://www.version2.dk/sites/v2/files/styles/article_620px_width/public/new-adreport_120.png?itok=od9laIxg" alt=""/></figure></p>
+
+<p>Som med alverdens andre scripts, er det kun fantasien, der sætter grænser. New-ADReport kan eksempelvis forholdsvis nemt omskrives til at sende en månedlig rapport pr. e-mail eller lignende.</p>
+
+<p>Scriptet leveres as-is og uden bindinger af nogen art. Det er ufarligt at køre, da der kun læses fra AD, men eksekvering foregår 100% på eget ansvar, så læs koden igennem selv først. Jeg skal i den forbindelse beklage de manglende kommentarer og det betydelige potentiale for kodeoptimering.</p>
+
+<p>En speciel tak skal lyde til PowerShell MVP Claus Nielsen (<a href="https://twitter.com/claustn">@claustn</a>), som har hjulpet undervejs i udviklingsprocessen.</p>
+
+<p>Skriv gerne om evt. bugs eller ønsker til næste version i kommentarerne nedenfor eller på Twitter: <a href="https://twitter.com/jakobheidelberg">@JakobHeidelberg</a>.</p>
+
+<p>Seneste version kan hentes her: <a href="http://1drv.ms/1GAe0Eo">http://1drv.ms/1GAe0Eo</a></p>
+
+<p>I håbet om flere stramt styrede AD'er i verden :-)</p>
+  </section></div></body></html>

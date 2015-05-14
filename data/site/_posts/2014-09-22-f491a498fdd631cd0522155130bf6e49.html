@@ -1,0 +1,84 @@
+---
+layout:     post
+title: 	    "Creedence Final Beta Available"
+post_author:	    
+post_date:	    Mon, 22 Sep 2014 19:06:56 +0000
+post_site:	    xenserver.org 
+post_link:	    http://xenserver.org/blog/entry/creedence-final-beta-available.html
+---
+<html><body><div><div id="entry-62" class="blog-read clearfix">&#13;
+&#13;
+		&#13;
+							&#13;
+		&#13;
+		&#13;
+		<p class="blog-head mtm">&#13;
+						<h1 id="title-62" class="blog-title rip" itemprop="name">Creedence Final Beta Available</h1>&#13;
+		</p>&#13;
+&#13;
+		<div class="blog-brief ptl pbl mbl">&#13;
+			<div class="in clearfix">&#13;
+									&#13;
+					
+<div class="blog-avatar float-l prel" itemscope="" itemtype="http://schema.org/Person" itemprop="author">
+			<a href="http://xenserver.org/blog/blogger/listings/tim.html" class="avatar float-l">
+			<img src="http://xenserver.org/images/easyblog_avatar/606_bio_head.jpg" alt="Tim Mackey" class="avatar isBlogger" itemprop="image"/></a>
+	</div>				&#13;
+				&#13;
+				
+&#13;
+				&#13;
+			</div>&#13;
+		</div>&#13;
+&#13;
+		&#13;
+		&#13;
+		&#13;
+				<div class="blog-text clearfix prel mtm mbm">&#13;
+&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			<p>As we move steadily towards a release of XenServer Creedence, I'm pleased to announce that we're ending the beta phase of development with the <a href="http://xenserver.org/overview-xenserver-open-source-virtualization/prerelease.html">release of Creedence beta.3</a>. Beta.3 sees us as functionally complete, and with the majority of known performance issues resolved. The performance issues resolved range from a dom0 memory leak when VIFs are disabled, through to resolution of a workaround with <a href="http://www.mellanox.com/">Mellanox</a> 40Gbps NICs, and some are resolved with both an updated driver bundle and a bump of the ovs version from 2.1.2 to 2.1.3. Functionally, beta.3 differs from beta.2 in having <a href="http://www.brendangregg.com/blog/2014-05-07/what-color-is-your-xen.html">PVHVM</a> support for <a href="http://releases.ubuntu.com/14.04/">Ubuntu 14.04</a>, <a href="http://www.redhat.com/en/technologies/linux-platforms/enterprise-linux">RedHat Enterprise Linux 7</a> and <a href="http://seven.centos.org/">CentOS 7</a>. Since these are new operating systems for us, the team is really interested in learning what you see for performance and stability for them.</p>&#13;
+<p>As with all previous pre-release builds, we'd like the community to help ensure Creedence is a rock solid release. This time we're a bit less interested in Creedence itself, and more about the operating and support environment. One of the less known "features" of Citrix support is the free "<a href="https://taas.citrix.com/AutoSupport/howitworks/">Insight Services</a>" or "TaaS". TaaS was originally designed to be "Tools-as-a-Service", and deliver on demand insight into the operation of Citrix technologies. With XenServer, Citrix Insight Services consumes a server status report from your XenServer host or pool, and then provides detailed guidance on how to potentially avoid an issue (say due to outdated BIOS or firmware), or resolve an issue you might be having (say by applying a hotfix). Honestly, it's not a bad practice in general to upload a server status report post XenServer install to ensure there aren't any items which could be latent in the deployment; rather like a health check.</p>&#13;
+<p>How does this relate to Creedence? Well, Insight Services uses a series of plugins to ensure the data is processed properly. The support team has recently updated TaaS to support Creedence, and I'd like to ensure two things. First I'd like to ensure the processing logic is capturing everything it should, and secondly I'd like to ensure that those of you who have been successfully running Creedence don't have any hidden errors. Since this is a free service offered by Citrix, I'd also like the open source XenServer install base to know about it as a way to ensure XenServer hosts are deployed in a manner which will allow for Citrix to support you if the need arises.</p>&#13;
+<p>Here's how you can help.</p>&#13;
+<ol><li>Install either beta.2 or beta.3 (beta.3 preferred) from the pre-release downloads: <a href="http://xenserver.org/overview-xenserver-open-source-virtualization/prerelease.html">http://xenserver.org/overview-xenserver-open-source-virtualization/prerelease.html</a></li>&#13;
+<li>From either XenCenter or the CLI take a server status report.&#13;
+<ul><li>XenCenter: Server status reports can be run from "Tools-&gt;Server Status Report ..."</li>&#13;
+<li>CLI: <em>xen-bugtool --yestoall --output zip</em></li>&#13;
+</ul></li>&#13;
+<li>Log into TaaS (create a free account if required): <a href="https://taas.citrix.com/AutoSupport/">https://taas.citrix.com/AutoSupport/</a></li>&#13;
+<li>Upload your server status report and see if anything interesting is found. If anything unexpected is found, we'd like to know about it.  The best way to let us know would be to submit an incident to <a href="https://bugs.xenserver.org">https://bugs.xenserver.org</a> which contains the TaaS information.</li>&#13;
+</ol><p>Thanks again to everyone who has contributed to the success we're seeing with Creedence.</p>&#13;
+			&#13;
+			&#13;
+										&#13;
+			&#13;
+					</div>&#13;
+&#13;
+		&#13;
+					&#13;
+			
+<span class="blog-rating">
+	&#13;
+</span>		&#13;
+&#13;
+&#13;
+					
+
+
+		&#13;
+							&#13;
+		&#13;
+		&#13;
+		&#13;
+</div>&#13;
+&#13;
+	&#13;
+	</div></body></html>

@@ -1,0 +1,47 @@
+---
+layout:     post
+title: 	    "Blog: Raspberry Pi 2 - en billig og spændende minicomputer"
+post_author:	    Peter Toft
+post_date:	    Sun, 22 Feb 2015 21:35:00 +0000
+post_site:	    www.version2.dk 
+post_link:	    http://www.version2.dk/blog/raspberry-pi-2-en-billig-og-spaendende-minicomputer-84326?utm_medium=feed&utm_source=version2.dk&utm_campaign=it_nyheder
+---
+<html><body><div><section class="body"><p>Jeg har købt en Raspberry Pi 2 for nylig, og det er værd at blogge om. 
+Det er en spændende platform,</p>
+
+<p><figure class="plugin full zoomable"><img data-original-image="http://www.version2.dk/sites/v2/files/dsc_1181.jpg" src="http://www.version2.dk/sites/v2/files/styles/large/public/dsc_1181.jpg?itok=xkwX98NN" alt=""/></figure></p>
+
+<p>På billedet ses min "gamle" Raspberry Pi til venstre og den ny Raspberry Pi 2 til højre.
+Det er samme størrelse, men der er en del ændringer.</p>
+
+<ul><li>Der er udvidet fra 2 til 4 USB porte</li>
+<li>Broadcom har droppet den gule RCA video port, og har nu "kun" HDMI</li>
+<li>Mikro-USB "strøm"-stikket er flyttet, dvs. jeg kan ikke genbruge kasser fra den gamle Raspberry Pi til den nye.</li>
+<li>På Raspberry Pi skal operativsystem bootes fra SD kort, mens på Raspberry Pi 2 er det fra et mikro-SD kort.</li>
+<li>Der er efter sigende ca. 6 gange mere kraft i den nye Raspberry Pi 2, og den nye chip har fire kerner.</li>
+<li>Den nye version har 1 GB RAM.</li>
+</ul><p>En "fejl" på Raspberri Pi 2 (model B) er at <a href="http://www.raspberrypi.org/xenon-death-flash-a-free-physics-lesson/">maskinen rebootter</a>, hvis man fotograferer den med en god blitz (<a href="http://www.version2.dk/artikel/blitz-kan-crashe-raspberry-pi-2-77068">også omtalt tidligere på version2.dk</a>). Det sker ikke under normal drift, men når blitzen rammer, så genstarter maskinen. Det er nemt at fikse. Man dækker enten hele enheden med en kasse, eller dækker den lille U16 switched mode power supply (SMPS) chip med lidt ugennemsigtigt dæk-materiale. Pudsig fejl, som nok er ret ligegyldig.</p>
+
+<p>Jeg har indtil videre prøvet fire operativsystem varianter (ikke Windows 10, som rygtet vil vide kan køre på maskinen).
+* Ubunbu Core
+* OSMC (Open Source Media Center) fra Sam Nazarko
+* Rasbian - en Debian Linux
+* OpenElec</p>
+
+<p>Ubuntu Core booter fint, men det er en yderst skrabet Linux. Ingen grafik - kun de basale tekst-mode komponenter. Det var mest af alt for at se hvad Ubuntu Core er for en fisk :-)</p>
+
+<p>OSMC startede jeg med, da Sam Nazarko havde meldt ud at der allerede er god understøttelse for Raspberri Pi 2. Selve mediecenteret spiller film uden problemer, men da jeg testede var der en håbløs styring af mus. At gå op og ned i menuer fungerede håbløst. Jeg kunne kun fange øverste og nederste menupunkt. Det er oplagt en fejl som må forventede løst hurtigt.</p>
+
+<p>Raspbian er en skrabet Debian Linux til Raspberry Pi. Det fungerer fint, men den LXDE desktop som følger med er meget skrabet i forhold til f.eks. Ubuntu Linux og KDE. Jeg måtte også lige prøve at spille nogle af de samme film som jeg havde prøvet med OpenElec, men mplayer under Raspbian virker slet ikke til at udnytte den nye Raspberry Pi 2 godt nok. Det hakker, så er det video, som er fokus så tag fat i OpenElec.</p>
+
+<p>OpenElec er  en klassisk embedded Linux med fokus på Kodi (tidligere kendt som XBMC) mediecenter. Det kører super godt på Raspberri Pi 2, og med en meget bedre oplevelse end med den gamle Raspberry Pi. DRs live-TV plugin kører også ok, men den udnytter kun en core ud af de fire cores, så mon ikke det kan blive væsentligt bedre med tiden.</p>
+
+<p>Jeg har fundet to irriterende problemer med Raspberri Pi 2 (ud over foto-fejlen beskrevet ovenfor).</p>
+
+<ul><li>Hvis jeg sætter en stor 2,5" disk på en USB-port, så er der ikke strøm nok til at føde disken. Det fungerer fint hvis der er ekstern strøm på disken, eller at det er en USB-stick.</li>
+<li>Man kan stadig ikke boote på en USB-stick. Det havde jeg håbet på :)</li>
+</ul><p>Hvis der er nogen af jer, som gerne vil have mig til at teste flere ting på min Raspberri Pi 2, som skriv nedenfor. 
+Jeg lover ikke at teste alt, men vil gerne prøve flere ting :-)</p>
+
+<p>/pto</p>
+  </section></div></body></html>

@@ -1,0 +1,87 @@
+---
+layout:     post
+title: 	    "XenServer 6.5 SP1 Released"
+post_author:	    
+post_date:	    Tue, 12 May 2015 15:29:10 +0000
+post_site:	    xenserver.org 
+post_link:	    http://xenserver.org/blog/entry/xenserver-6-5-sp1-released.html
+---
+<html><body><div><div id="entry-91" class="blog-read blog-post clearfix">
+
+		
+		<div class="blog-brief clearfix ptl pbl mbl">
+													<div class="in">
+									
+					
+<div class="blog-avatar float-l prel" itemscope="" itemtype="http://schema.org/Person" itemprop="author">
+			<a href="http://xenserver.org/blog/blogger/listings/tim.html" class="avatar float-l">
+			<img src="http://xenserver.org/images/easyblog_avatar/606_bio_head.jpg" alt="Tim Mackey" class="avatar isBlogger" itemprop="image"/>
+			<meta itemprop="name" content="Tim Mackey"/>
+		</a>
+	</div>				
+				
+				
+
+				
+			</div>
+		</div>
+
+		<p class="blog-head mtm">
+						<h1 id="title-91" class="blog-title rip">XenServer 6.5 SP1 Released</h1>
+		</p>
+
+		
+				<div class="blog-text clearfix prel mtm mbm">
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<p>Wait, another XenServer release? Yes folks, there is no question we've been very busy improving upon XenServer over the past year, and the pace is quite fast. In case you missed it, we <a href="http://xenserver.org/discuss-virtualization/virtualization-blog/entry/creedence-launches-as-xenserver-6-5.html">released XenServer 6.5</a> in January (formerly known as Creedence). Just a few weeks ago I announced and made available <a href="http://xenserver.org/blog.html?view=entry&amp;id=90">pre-release binaries for Dundee</a>, and now we've just announced availability at <a href="http://www.citrixsynergy.com/">Citrix Synergy</a> of the first service pack for XenServer 6.5. Exciting times indeed.</p>&#13;
+<h2>What's in XenServer 6.5 SP1</h2>&#13;
+<p>I could bury the lead talk about hot fixes and roll-ups (more on that later), but the real value for SP1 is in the increased capabilities. Here are the lead items for this service pack:</p>&#13;
+<ol>&#13;
+<li>The <a href="https://www.docker.com/">Docker</a> work we previewed in <a href="http://xenserver.org/discuss-virtualization/virtualization-blog/entry/xenserver-at-fosdem.html">January at FOSDEM</a> and later on xenserver.org is now available. If you've been using <a href="http://xenserver.org/discuss-virtualization/virtualization-blog/entry/preview-of-xenserver-support-for-docker-and-container-management.html">xscontainer in preview</a> form, it should upgrade fine, but you should back up any VMs first. Completion of the Docker work also implies that <a href="https://coreos.com/">CoreOS</a> 633.1.0 is also an officially supported operating system with SP1. Containers deployed in Unbuntu 14.04 and RHEL, CentOS, and Oracle Enterprise Linux 7 and higher are supported.</li>&#13;
+<li>Adoption of LTS (long term support) guest support. XenServer guest support has historically required users of guest operating system to wait for XenServer to adopt official support for point releases in order to remain in a supported configuration. Starting with SP1, all supported operating systems can be upgraded within their major version and still retain "supported" status from Citrix support. For example, if a CentOS 6.6 VM is deployed, and the CentOS project subsequently releases CentOS 6.7, then upgrading that VM to CentOS 6.7 requires no changes to XenServer in order to remain a supported configuration.</li>&#13;
+<li><a href="https://software.intel.com/en-us/blogs/2014/05/02/intel-graphics-virtualization-update">Intel GVT-d </a>support for GPU pass through for Windows guests. This allows users of Xeon E3 Haswell processors to use the embedded GPU in those processors within a Windows guest using standard Intel graphics drivers.</li>&#13;
+<li>NVIDIA GPU pass though to Linux VMs allowing OpenGL and CUDA support for these operating systems.</li>&#13;
+<li>Installation of supplemental packs can now be performed through XenCenter Update. Note that since driver disks are only a special case of a supplemental pack, driver updates or installation of drivers not required for host installation can now also be performed using this mechanism</li>&#13;
+<li>Virtual machine density has been increased to 1000. What this means is that if you have a server which can reasonably be expected to run 1000 VMs of a given operating system, then using XenServer you can do so. No changes were made to the supported hardware configuration to accommodate this change.</li>&#13;
+</ol>&#13;
+<h2>Hotfix process</h2>&#13;
+<p>As with all XenServer service packs, XenServer 6.5 SP1 contains a rollup of all existing hot fixes for XenServer 6.5. This means that when provisioning a new host, your first post-installation step should be to apply SP1. It's also important to call out that when a service pack is released, hotfixes for the prior service pack level will no longer be created within six months. In this case, hotfixes for XenServer 6.5 will only be created through November 12th and following that point hotfixes will only be created for XenServer 6.5 SP1. In order for the development teams to streamline that transition, any defects raised for XenServer 6.5 in <a href="https://bugs.xenserver.org">bugs.xenserver.org</a> should be raised against 6.5 SP1 and not base 6.5.</p>&#13;
+<h2>Where to get XenServer 6.5 SP1</h2>&#13;
+<p> </p>&#13;
+<p>Downloading XenServer 6.5 SP1 is very easy, simply go to <a href="http://xenserver.org/download">http://xenserver.org/download</a> and download it!     </p>
+			
+			
+										
+			
+			
+			
+			
+					</div>
+
+					
+
+
+		
+				
+		
+							
+		
+		
+		&#13;
+&#13;
+	</div>
+
+	
+	
+
+</div></body></html>

@@ -1,0 +1,35 @@
+---
+layout:     post
+title: 	    "Mød Rowhammer - en spektakulær sårbarhed i RAM-klodser"
+post_author:	    Jesper Stein Sandal
+post_date:	    Fri, 13 Mar 2015 14:23:14 +0000
+post_site:	    www.version2.dk 
+post_link:	    http://www.version2.dk/artikel/moed-rowhammer-en-spektakulaer-saarbarhed-i-ram-klodser-99198?utm_medium=feed&utm_source=version2.dk&utm_campaign=it_nyheder
+---
+<html><body><div><section class="body"><p>Ethvert sikkerhedshul bør i disse tider have et godt navn, og godt nok var der ikke mange, der bed mærke i 'Row Hammer', da det først dukkede op i nogle tekniske artikler, der mest henvendte sig til chipindustrien. Men nu <a href="http://googleprojectzero.blogspot.de/2015/03/exploiting-dram-rowhammer-bug-to-gain.html">har sikkerhedseksperter hos Google i dén grad åbnet for Row Hammer-posen</a>.</p>
+
+<p>Opmærksomheden skyldes, at Row Hammer, som Google-folkene nu har fundet ud af at udnytte i praksis, er et angreb af en type, vi normalt ikke ser, for der er ikke tale om et sikkerhedshul i software. Derimod handler det om måden, hukommelseschip, specifikt DDR3 SDRAM, er opbygget på.</p>
+
+<p>Hukommelsen er opbygget af rækker af celler, og hver celle holder på en elektrisk ladning, der bestemmer, hvorvidt informationen i den pågældende bit er 0 eller 1.</p>
+
+<p>Et program har kun adgang til nogle bestemte områder i hukommelsen, mens eksempelvis styresystemet har nogle rækker i hukommelsen, som almindelige applikationer ikke kan få adgang til. Men nøjagtigt som æbler fra naboens æbletræer kan blæse over hækken og havne i din have, når det blæser nok, så kan ladningen i én række af celler sive over i celler i naborækken.</p>
+
+<p>Det kan gøres ved at læse indholdet af en række af celler mange gange i træk. Håbet er så, at man kan få ændret en bit i en naborække fra eksempelvis 0 til 1, og gøre det, inden hukommelsen automatisk bliver genopfrisket.</p>
+
+<p>Hukommelsescontrolleren vil normalt genopfriske værdien af cellerne med korte intervaller på eksempelvis 64 millisekunder. Men hvis man har ændret værdien, inden genopfriskningen sker, vil genopfriskningen fastholde den ændrede værdi.</p>
+
+<p>På den måde kan man få lagt sin ondsindede kode ind i en del af hukommelsen, der er reserveret til styresystemet.</p>
+
+<p>Der er altså tale om, at man ved at udnytte en svaghed i hardwaren kan manipulere med softwaren, og det er temmelig usædvanligt i moderne computere. Chipproducenterne er dog blevet opmærksomme på problemet og er i færd med at implementere teknikker i nyere chips, som forhindrer det. <a href="http://arstechnica.com/security/2015/03/cutting-edge-hack-gives-super-user-status-by-exploiting-dram-weakness/">Ifølge Ars Technica</a> skulle DDR4-hukommelse eksempelvis ikke være sårbar.</p>
+
+<p>Problemet har ikke altid eksisteret i SDRAM-chips, men er først blevet muligt med de nye fremstillingsmetoder, hvor cellerne er mindre og ligger tættere. Imidlertid vil der altså være en del nyere hukommelseschips, hvor angrebet er muligt, og der ikke er bygget modforanstaltninger ind.</p>
+
+<p>Servere, hvor sådan et angreb kunne være særlig interessant, kan være bedre beskyttet, hvis de anvender fejlkorrigerende hukommelseschips, ECC, men fejlkorrektionen kan kun håndtere én fejl i et område pr. genopfriskning, så denne type chip er heller ikke immun, <a href="http://blog.erratasec.com/2015/03/some-notes-on-dram-rowhammer.html#.VQLPE-G3qQV">skriver sikkerhedsekspert Graham Cluley</a>.</p>
+
+<p>Udfordringer med angreb
+Der er dog udfordringer forbundet med at udnytte Row Hammer. Google-eksperterne angreb Linux-systemer, hvor de kunne få et kort over hukommelsen, men de skulle stadig gætte, hvilke rækker der var interessante at angribe. Flere styresystemer tildeler hukommelsesområderne tilfældigt efter hver genstart, hvilket gør angrebet vanskeligere men ikke umuligt.</p>
+
+<p>Google-folkene fandt også ud af, at det for visse typer hukommelse var nødvendigt at banke løs på ikke bare én række ved siden af den række, der skulle ændres, men på rækkerne på begge sider.</p>
+
+<p>I praksis undersøgte sikkerhedseksperterne deres angreb på 29 forskellige bærbare pc'er med Linux fremstillet mellem 2010 og 2014, og angrebet lykkedes på godt halvdelen af modellerne.</p>
+  </section></div></body></html>

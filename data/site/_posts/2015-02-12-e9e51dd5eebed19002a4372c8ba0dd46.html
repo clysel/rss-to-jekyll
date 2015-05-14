@@ -1,0 +1,73 @@
+---
+layout:     post
+title: 	    "Microsoft open sourcer endnu mere .NET"
+post_author:	    Jakob Møllerhøj
+post_date:	    Thu, 12 Feb 2015 11:18:41 +0000
+post_site:	    www.version2.dk 
+post_link:	    http://www.version2.dk/artikel/microsoft-open-sourcer-endnu-mere-net-77111?utm_medium=feed&utm_source=version2.dk&utm_campaign=it_nyheder
+---
+<html><body><div><section class="body"><p>Som det vil være nogle Version2-læsere bekendt, er Microsoft ved at open source virksomhedens .NET-programmeringmiljø i form af .NET Core. En cross-platform gren af .NET Frameworket.</p>
+
+<p><a href="http://blogs.msdn.com/b/dotnet/archive/2015/02/03/coreclr-is-now-open-source.aspx">Senest er også eksekveringsmotoren CoreCLR røget på GitHUB</a>, hvor andre .NET Core-dele også ligger. CoreCLR tager sig blandt andet af garbage collection og kompilering til maskinkode.</p>
+
+<p>Programchef Immo Landwerth hos Microsoft kalder i et <a href="http://blogs.msdn.com/b/dotnet/archive/2014/11/12/net-core-is-open-source.aspx">omfangsrigt blogindlæg</a> fra starten af december .NET Core for 'grundlaget for alle fremtidige .NET-platforme'.</p>
+
+<p>Siden blogindlægget har det britiske teknologimedie The Register beskæftiget sig med Microsofts Open Source-tiltag ad flere omgange. <a href="http://www.theregister.co.uk/2014/12/05/making_sense_of_net_core_microsofts_new_app_development_stack/">Mediet fortæller</a>, at .NET Core er en modulær gren af det eksisterende .NET-framework. En af idéerne med open source og .NET Core er, at det modsat .NET Frameworket kan køre på forskellige platforme, herunder Mac og Linux.</p>
+
+<p>Måske vil nogen heromkring stoppe op og tænke, at der jo allerede findes en open source-implementering af .NET, der kan køre på forskellige platforme - nemlig Mono.</p>
+
+<p>Landwerth peger i blogindlægget på, at Mono og .NET på Windows har haft to seperate kodebaser. Mono har været en genimplementering af .NET, da der ikke har været open source .NET-kode tilgængelig for monoprojektet.</p>
+
+<p>»Den bedste måde at bygge en cross-platform stak på, er at bygge en enkelt stak i samarbejde. Og den bedste måde at gøre netop det på,, er ved at gøre den open source,« skriver Landwerth.</p>
+
+<p>Udover at kunne køre på flere platforme, indeholder .NET Core også det, Microsoft kalder app-local deployment. Det vil sige, at hver enkelt .NET Core-applikation indeholder et individuelt framework, så applikationen kan køre uafhængigt af, hvilket .NET Framework, der måtte være installeret på systemet.</p>
+
+<p><a href="http://www.theregister.co.uk/2014/12/18/untangling_net_core_microsoft_answers_questions_on_net_futures/?page=1">The Register har talt med Director of Program Management ved Microsoft Jay Schmelzer</a> om open source-tiltaget inden for .NET. Og han afviser, at .NET Core skulle gøre det nuværende .NET Framework til Windows-platformen forældet.</p>
+
+<p>»Vi tror fortsat på det fulde framework og de scenarier, det er skabt til at understøtte, og vi vil fortsætte med at innovere på det område.«</p>
+
+<p>Det udsagn stiller skribenten på The Register, Tim Anderson, sig dog noget tvivlende over for. Han henviser dels til tidligere udsagn - eksempelvis fra Landwerths blogindlæg - om, at .NET Core netop skulle være fremtiden.</p>
+
+<p>Og desuden påpeger Tim Anderson, at et diagram fra Microsoft viser, at de platforme, virksomheden bekymrer sig mest om, eksempelvis Store-apps bygger på .NET Core (under Windows), mens der er lagt op til, at .NET Frameworket vil sameksistere for at understøtte Windows Desktop-udvikling og være en alternativ platform for ASP.NET - ASP.NET 5 er både til .NET Core og .NET Frameworket.</p>
+
+<p><figure class="plugin full zoomable"><img data-original-image="http://www.version2.dk/sites/v2/files/2577.dotnet2015.png" src="http://www.version2.dk/sites/v2/files/styles/large/public/2577.dotnet2015.png?itok=0NLtXwca" alt=""/></figure></p>
+
+<h2>Miracle om .NET og open source</h2>
+
+<p>Det danske udviklingshus Miracle beskæftiger sig også med .NET. Og her har Simon Møgelvang Bang, der har titel af director for blandt andet udvikling, samlet input fra udviklerne i en mail, han har sendt til Version2.</p>
+
+<p>»Jeg tror ikke det vil få en stor betydning for min hverdag, som .NET-udvikler, men det vil forhåbentlig gøre at man som .NET-udvikler ikke ses som en der tjener ‘the evil corporation’. Dog vil jeg se frem til den dag at jeg kan køre "Det ultimative IDE" (Visual Studio for dem som er i tvivl) på den platform/OS, jeg synes er bedst. Men der er nok et stykke vej endnu...,« står der i mailen.</p>
+
+<p>Et andet udsagn i skrivelsen fra Simon Møgelvang Bang lyder:
+»Jeg tror (uanset årsagen), at MS ved at gå mod open source vil betyde, at vi vil se .Net vil blive accepteret som open source sprog, og også, at det vil blive mere udbredt cross platform.«</p>
+
+<p>Udviklerne ved Miracle har også forholdt sig specifikt til den seneste open sourcing af CoreCLR.</p>
+
+<p>»Det giver et indblik i hvilke værktøjer Microsoft benytter internt, samt hvordan deres build pipeline ser ud. Det er altid rart at kunne pege på producenten, når man gerne vil have indført nye værktøjer. Eksempelvis ser det ud til, at de benytter NuGet til at håndtere eksterne afhængigheder. <a href="https://github.com/dotnet/coreclr/blob/master/tests/src/NuGet.Config">https://github.com/dotnet/coreclr/blob/master/tests/src/NuGet.Config</a>,« står der i mailen fra Simon Møgelvang Bang.</p>
+
+<p>I samme mail, bliver står der også i forhold til open source og CoreCLR: 
+»Udviklere synes det er sjovt at sende pull requests der fixer typos, så de kan få deres account tilknyttet projektet. Microsofts udviklere tager pænt imod pull requests. Se eksempelvis: <a href="https://github.com/dotnet/coreclr/pull/42/files">https://github.com/dotnet/coreclr/pull/42/files</a> , samt kommentarerne.«</p>
+
+<p>Derudover er der en Miracle-udvikler, der håber på, at Microsoft vil være lydhøre overfor de input, der vil komme som følge af .NET i open source-sammenhæng:</p>
+
+<p>»Open source har dog en stor fordel, som man kan håbe får betydning her. Det giver mulighed for at der opstår aktiv gruppe dedikerede nørder, som selv kan bidrage med fejlrettelser og nye features. I modsætning til closed source hvor de samme dedikerede nørder kan stå på sidelinjen og råbe at det ikke virker og så håbe på en reaktion fra Microsoft.«</p>
+
+<h2>.NET-udviklere er på GitHub</h2>
+
+<p>Meget tyder på, at Microsoft har tænkt sig at være lydhøre over for input i forhold til .NET Core. I blogindlægget nævner Immo Landwerth i hvert fald input fra community som begrundelse for at lægge .NET Core på GitHub (og eksempelvis ikke Microsofts egen open source-kodetjeneste Codeplex).</p>
+
+<p>»Principielt bryder vi os ikke om, at bede communitiet om at komme derhen, hvor vi er. I stedet vil vi bevæge os hen til, hvor communitiet allerede befinder sig. Baseret på feedback fra mange andre projekter, som vi har modtaget, lader det til, at hovedparten af .NET communitiet befinder sig på GitHub.«</p>
+
+<p>Derudover nævner Immo Landwerth to hovedpunkter, som begrundelse for at open source .NET Core.</p>
+
+<ul><li>At lægge fundamentet for en cross-platform udgave af .NET</li>
+<li>At bygge og udnytte et stærkere øko-system </li>
+</ul><p>I forhold et stærkere økosystem, skriver Immo Landwerth, at forfulgt en agil udviklingscyklus for NuGet - et pakkestyringssystem til Microsofts udviklingsplatform, herunder .NET. Og den agile strategi med hyppige og tidlige releases har været en succes, hvor kunderne har kunnet levere feedback.</p>
+
+<p>Og, skriver Landwerth, hvis du tænker over det:
+»open source er essentielt den ultimative agile udviklings-stil. Alle ændringer bliver omgående gjort offentlige og (i teorien) brugbare. Mange medlemmer af mit hold er på Twitter og Stack Overflow (onlineforum for udviklere, red.) og er involverede i kundediskussioner. Ved mere end en lejlighed, har jeg ønsket, jeg kunne pege en kunde i retning af et internt dokument, der forklarer, hvordan vores system er implementeret. Eller pege på en commit, der viser, hvordan et problem er blevet løst.«</p>
+
+<p>»For os betyder det at stacken bliver open source også, at vi er i stand til at imødegå vores kunder i realtid. Selvfølgeligt ønsker alle kunder ikke at interagere med os så tæt. Men dem som gør, forbedrer stacken for os alle, fordi de giver os tidlig og stabilt feedback,« skriver Landwerth og fortsætter:</p>
+
+<p>»Jeg tænker på det, som at køre en bil: hyppige småjusteringer af rattet er ofte mere effektivt end få drastiske ændringer - og også mindre risikabelt.«</p>
+  </section></div></body></html>

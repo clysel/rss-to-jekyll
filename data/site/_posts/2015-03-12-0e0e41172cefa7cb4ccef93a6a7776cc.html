@@ -1,0 +1,48 @@
+---
+layout:     post
+title: 	    "Svenske hackere udstiller dårlig sikkerhed hos Kommunernes Landsforening"
+post_author:	    Jakob Møllerhøj
+post_date:	    Thu, 12 Mar 2015 05:29:40 +0000
+post_site:	    www.version2.dk 
+post_link:	    http://www.version2.dk/artikel/kl-opgraderer-server-og-fjerner-login-fil-offentlig-audit-paa-svensk-forum-96261?utm_medium=feed&utm_source=version2.dk&utm_campaign=it_nyheder
+---
+<html><body><div><section class="body"><p>I et indlæg under overskriften <a href="https://swehack.org/viewtopic.php?f=18&amp;t=676">'Audit af det kommunale skattesystem i Danmark'</a> på det svenske it-sikkerhedsforum swehack bliver sikkerheden revset på et subdomæne under Kommunernes Landsforenings (KL) hjemmeside, www.tilskudsmodel.kl.dk.</p>
+
+<p>Ifølge KL er der dog ikke tale om et kommunalt skattesystem, og sitet er i øvrigt ikke så sårbart, som det svenske indlæg lægger op til. Alligevel opgraderer KL en server og fjerner en tekstfil, efter at være blevet gjort opmærksom på indlægget.</p>
+
+<p>På Swehack oplister en person med brugernavnet zerrox flere umiddelbart alvorlige sikkerhedsproblemer for www.tilskudsmodel.kl.dk Eksempelvis en fil med login-oplysninger i klar tekst.</p>
+
+<p>»Dumma jävla retards, sparade mysql detaljer i en jävla text fil,« skriver zerrox i den forbindelse.</p>
+
+<p>Løseligt oversat er det en påpegelse af, at det er dumt at lægge MySQL-logindetaljer i en frit tilgængelig tekstfil.</p>
+
+<p>Desuden antyder indlægget på Swehack, at KL-domænet også er modtagelig over for SQL-injection. Altså hvor en ondsindet bruger indtaster SQL-kode i stedet for eksempelvis brugernavn og password, hvorefter SQL-koden bliver eksekveret i den bagvedliggende database-server. Det kan selvsagt få alvorlige konsekvenser.</p>
+
+<p>Endeligt ser serveren bag KL-domænet ud til at indeholde den berygtede Heartbleed-sårbarhed. Den gør det kort fortalt muligt at fiske info, såsom brugernavn og password, i klartekst ud af hukommelsen på serveren via fjernopkobling.</p>
+
+<h2>Ikke skattesystem</h2>
+
+<p>Version2 har forelagt KL det svenske indlæg. Chefkonsulent hos kommunernes og regionernes løndatakontor Henrik Andersen vender tilbage via mail. Han fortæller, at www.tilskudsmodel.kl.dk ikke har noget med det kommunale skattesystem at gøre, som overskriften på indlægget hos swehack ellers mere end antyder.</p>
+
+<p>»Det er en model til at beregne på tilskudsordninger, og indeholder ingen data om enkeltpersoner. Serveren er ikke en del af KL's infrastruktur, og bruges kun til at køre denne model.«</p>
+
+<p>Desuden afviser Henrik Andersen, at sitet skulle være sårbart over for SQL-injection, da der anvendes ‘prepared statements’. Altså hvor de brugerindtastede data bliver behandlet som parametre i den bagvedliggende SQL-kode. Denne tilgang er i udgangspunktet ikke sårbar over for SQL-injection.</p>
+
+<p>Så er der filen med login-oplysninger i klartekst. Den burde ikke have ligget der i første omgang, medgiver Henrik Andersen, som dog også nedtoner problemet.</p>
+
+<p>»Det server-password, der lå i klar tekst er en test-adgangskode, som er overlevet fra en tidligere testfase,« skriver han og fortsætter:</p>
+
+<p>»Det er beklageligt, og burde ikke være sket, men der er altså ikke tale om, at brugeres adgangskoder er tilgængelige, og adgangskoden kunne kun bruges hvis man i øvrigt havde direkte adgang til serveren. Informationen er fjernet.«</p>
+
+<h2>Heartbleed?</h2>
+
+<p>Men hvad så med Heartbleed? Zerrox linker til et testsite, hvor ser ud til, at en del af serverens hukommelse bliver dumpet. Serveren bag sitet er imidlertid en Windows-server, som ikke er berørt af sårbarheden, der ligger i OpenSSL, påpeger Henrik Andersen.</p>
+
+<p>Der er dog en forklaring på, hvorfor serveren alligevel ser ud til at være sårbar.</p>
+
+<p>»Sårbarheden over for Heartbleed vedrører ikke serveren, som kører modellen, men en proxy-server, som adgangen til serveren går igennem,« skriver han.</p>
+
+<p>Proxy-serveren er nu opgraderet.</p>
+
+<p>Så selvom situationen altså ikke lader til at være så alvorlig, som indlægget på swehack i første omgang kunne tyde på, så har den åbne audit på det svenske forum altså nu resulteret i en fjernet tekstfil med login-oplysninger og en opgradering af en sårbar proxy-server.</p>
+  </section></div></body></html>

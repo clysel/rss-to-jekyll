@@ -1,0 +1,54 @@
+---
+layout:     post
+title: 	    "Bevidst svækket 90'er-kryptering rammer NSA-hjemmeside"
+post_author:	    Jakob Møllerhøj
+post_date:	    Fri, 06 Mar 2015 14:30:40 +0000
+post_site:	    www.version2.dk 
+post_link:	    http://www.version2.dk/artikel/bevidst-svaekket-90er-kryptering-rammer-nsa-hjemmeside-93494?utm_medium=feed&utm_source=version2.dk&utm_campaign=it_nyheder
+---
+<html><body><div><section class="body"><p>It-sikkerhedsforskere har opdaget en sårbarhed, der rammer flere TLS/SSL-implementeringer hos blandt andet Android og Apple-brugere. Fejlen gør det muligt at lave man-in-the-middle angreb, når sårbare klienter tilgår visse servere. Det vil sige, at uvedkommende kan lytte med på linjen, selvom der er hængelås i browseren, og alt ser ud til at være i den skønneste orden.</p>
+
+<p>Det fortæller blandt andet <a href="http://www.washingtonpost.com/blogs/the-switch/wp/2015/03/03/freak-flaw-undermines-security-for-apple-and-google-users-researchers-discover/">Washington Post</a>.</p>
+
+<p>Krypteringsekspert og professor Matthew D. Green ved Johns Hopkins Universitetet, der har hjulpet med at undersøge problemet, har skrevet <a href="http://blog.cryptographyengineering.com/2015/03/attack-of-week-freak-or-factoring-nsa.html">et længere, detaljeret og ikke mindst pædagogisk blogindlæg</a> om fejlen, som denne artikel i udpræget grad læner sig op ad.</p>
+
+<p>Selve sårbarheden ligger i klientsoftwaren. Men for at den kan udnyttes, forudsætter det, at serveren, som klienten tilgår, understøtter forældet kryptering. Og det er der - til fleres overraskelse - rigtigt mange servere, der viser sig at gøre.</p>
+
+<p>Det gælder eksempelvis hjemmesiden for det amerikanske sikkerhedsagentur NSA, nsa.gov, og server-netværket bag Facebooks like-knap, der jo som bekendt er tilstede på et utal af hjemmesider. Begge systemer er dog nu opdateret, så (for) svag kryptering ikke længere understøttes.</p>
+
+<p>Den aktuelle sårbarhed har fået navnet 'FREAK' (Factoring attack on RSA-EXPORT Keys.)</p>
+
+<p>FREAK-sårbarheden udspringer af amerikansk eksportforbud mod stærk kryptering tilbage i 90’erne, hvilket nogen nok vil finde ironisk, eftersom NSAs hjemmeside ser ud til at have kunnet udnyttes i den forbindelse.</p>
+
+<p>»Tilbage i de tidligere 1990’ere, da SSL blev opfundet ved Netscape Corporation, fastholdt USA et omfattende eksport-regime for at kontrollere krypteringssystemer. For at distribuere krypto uden for USA var det et krav, at virksomheder bevidst ‘svækkede’ styrken på krypteringsnøgler. Det betød for RSA-kryptering, at den maksimale tilladte nøglestyrke var på 512 bits,« forklarer Matthew D. Green i blogindlægget, som fortsætter:
+<figure class="plugin right zoomable"><img data-original-image="http://www.version2.dk/sites/v2/files/screenshot_from_2015-03-06_135312.png" src="http://www.version2.dk/sites/v2/files/styles/medium/public/screenshot_from_2015-03-06_135312.png?itok=prJPTcCV" alt=""/><figcaption>FREAK-angrebet er ikke bare teoretisk. Her demonsterer folkene bag opdagelsen af sårbarheden, hvor det kan bruges til et man-in-the-middle-angreb mod en sårbar browser, der tilgår NSA's hjemmeside. Kilde: https://www.smacktls.com/#freak </figcaption></figure>
+»512-bits eksport-styrke-krypteringen var et kompromis mellem dum og dummere. I teorien var den designet til at sikre, at NSA ville være i stand til at ‘tilgå’ kommunikation, mens den efter sigende gav kryptering, der stadig var ‘godt nok’ til kommercielt brug.«</p>
+
+<p>Dermed var det også nødvendigt for server-software både at understøtte svag og stærk kryptering alt efter, hvad klienten understøtter. Det har dog ikke været aktuelt, siden krypto-eksport-forbuddet blev løftet i slut-90’erne.</p>
+
+<h2>Mange servere understøtter svag kryptering</h2>
+
+<p>Alligevel har det vist sig, at adskillige den dag i dag stadig understøtter den svage kryptering. Og altså også nsa.gov og netværket bag Facebooks like-knap. Facebook skulle dog have lavet et fiks i mellemtiden.</p>
+
+<p><a href="https://freakattack.com/">Forskere fra Universitet i Michigan</a> har således for nylig lavet en scanning, der viser, at eksport-RSA-kryptering er understøttet af op til 36,7 pct. af de 14 mio. sites med certifikater, som browsere har tillid til, fortæller Matthew D. Green.</p>
+
+<p>Og langt størstedelen af disse sites lader til at være content-distributions-netværk såsom Akamai. <a href="https://blogs.akamai.com/2015/03/cve-2015-0204-getting-out-of-the-export-business.html">De er nu ved at fjerne understøttelse for den svage kryptering</a>.</p>
+
+<p>Det  er dog heller ikke i sig selv et problem, da klienter i sagens natur - her i 2015 - i udgangspunktet ikke vil spørge serveren om svag kryptering. Men her kommer bug’en ind. Forskere fra blandt andet Microsoft Research og franske INRIA har testet SSL/TLS-implementationer.</p>
+
+<p>Og det viser sig, at flere moderne TLS-klienter kan narres til at acceptere eksport-styrke RSA-krypteringsnøgler fra servere, der måtte tilbyde den slags, selvom klienten ikke har bedt om det.</p>
+
+<p>I praksis foregår det ved, at man-in-the-middle (mitm) opfanger start-kommunikationen fra klienten til serveren. Mitm forespørger nu serveren efter en 512-bit RSA-nøgle. Og en sårbar klient ender - som følge af bug’en - med at acceptere denne nøgle, selvom det ikke var den styrke, klienten bad om til at starte med. Slutresultatet er, at en angriber kan læse kommunikation mellem klient og server i klar tekst, selvom den ser ud til at være krypteret.</p>
+
+<p>Blandt de sårbare klienter er Apples SecureTransport og OpenSSL. Sidstnævnte bliver brugt i Android.</p>
+
+<p>Matthew D. Green påpeger i den forbindelse, at bugs i klientsoftware er ved at blive patched. Blandt andet er Apple i gang. At dømme efter følgende bemærkning, har krypteringseksperten dog tilsyneladende ingen forventninger til, at Android-brugere lige med det første får opdateret klientsoftwaren.</p>
+
+<p>»Klient-bugs bliver snart patched (opdater jeres enheder! Med mindre du har Android, i så fald er du på røven). Med lidt held, så vil servere, der understøtter eksport-styrke RSA-ciffer-suites snart være en kuriøs sjældenhed.«</p>
+
+<p>At FREAK-angrebet er andet en teoretisk, ligger der en stribe videoer på <a href="https://www.smacktls.com/#freak">smacktls.com</a>, som demonstrerer. Det er forskerne bag opdagelsen af FREAK, der står bag hjemmesiden.</p>
+
+<p>Det er dog ikke selve sårbarheden, der er Matthew D. Greens hovedpointe i blogindlægget. Han mener FREAK-historien illustrerer, hvorfor det er en rigtig dårlig idé, når myndigheder og politikere for tiden i henholdsvis USA og Europa taler for bagdøre i kryptering - eksempelvis for at bekæmpe kriminalitet.</p>
+
+<p>»Krypteringsbagdøre vil altid vende sig om og bide dig i røven. De er aldrig det værd,« slutter professoren sit blogindlæg.</p>
+  </section></div></body></html>

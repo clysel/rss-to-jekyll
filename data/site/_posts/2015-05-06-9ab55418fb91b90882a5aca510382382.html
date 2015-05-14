@@ -1,0 +1,50 @@
+---
+layout:     post
+title: 	    "Blog: Vil FIDO æde papkortet?"
+post_author:	    Henrik Biering
+post_date:	    Wed, 06 May 2015 17:34:00 +0000
+post_site:	    www.version2.dk 
+post_link:	    http://www.version2.dk/blog/vil-fido-aede-papkortet-175256?utm_medium=feed&utm_source=version2.dk&utm_campaign=it_nyheder
+---
+<html><body><div><section class="body">
+    <p>Digitaliseringsstyrelsen har for nylig barslet med en <a href="http://www.version2.dk/artikel/digitaliseringsstyrelsen-liser-tre-scenarier-fremtidens-nemid-144259">foranalyse vedr. næste generations NemID</a>.</p>
+
+<p>Den anfører flere fordele ved en flerleverandørstrategi. F.eks. færre "single points of failure" samt mere konkurrence m.h.t. brugervenlighed og features rettet mod såvel offentlige som private anvendelser.</p>
+
+<p>Der lægges også op til at private tjenesteudbydere af bl.a. sikkerhedshensyn skal benytte dedikerede broker/login-tjenester, på samme måde som Nemlog-in giver Single-sign-On til offentlige tjenester med den nuværende NemID.</p>
+
+<p>Én af de ting, man umiddelbart holder fast ved, er "nøglekortet", selvom meningerne blandt brugerne i følge rapporten har været delte: <em>"Nøglekortet har af nogle interessenter været udskældt, hvor Fase 1 fx viste, at der er borgere, som betragter kortet som et nødvendigt onde. Andre interessenter har rost nøglekortet som forholdsvist enkelt og let at forstå."</em></p>
+
+<p>Et muligt alternativ til "nøglekortet" er de ny <a href="https://fidoalliance.org/specifications/overview/">FIDO-teknologier U2F og UAF</a>. U2F er et rent ihændehaver-token til brug som 2. faktor i tilknytning til f.eks. brugernavn/adgangskode og modsvarer derfor umiddelbart funktionaliteten af et traditionelt nøglekort. UAF betegner tokens, som derudover har integreret biometrisk autentifikation, hvilket kan være nyttigt hvor personer, man er tæt på, kan tænkes at ville "låne" ens token.</p>
+
+<p>Der er umiddelbart en række fordele ved at skifte et nøglekort ud med en FIDO U2F token:</p>
+
+<ul>
+<li>Brugervenligt (kræver ingen aflæsning eller indtastning, kun berøring)</li>
+<li>Phishing resistent (effektiv to-vejs autentifikation)</li>
+<li>Kan ikke kopieres (kun én person - eller evt. device - kan få adgang)</li>
+<li>Psedonym (genererer separate nøglepar for hver applikation)</li>
+<li>Kræver ikke genudstedelse med regelmæssige mellemrum</li>
+<li>Universelt anvendelig (bruger kan selv vælge fabrikat og model og benytte samme token på tværs af helt uafhængige private, erhvervsmæssige- og offentlige tjenester.</li>
+</ul>
+
+<p>Ulemperne / forudsætningerne er så:</p>
+
+<ul>
+<li>At FIDO standarden rent faktisk vinder udbredelse</li>
+<li>At den understøtter alle typer enheder (pt. primært USB, NFC m.fl. undervejs)</li>
+<li>At priserne på tokens bliver lave gennem konkurrence</li>
+<li>At man ikke som med nøglekort blot kan sende en ny direkte anvendelig token til erstatning for en mistet (Her mangler der pt. fodslag omkring praktisk håndtering af recovery-processer)</li>
+</ul>
+
+<p>Hvad mener og tror du? Vil FIDO æde sig ind på forbrugermarkedet, enterprisemarkedet eller æde sig ind på det offentlige NemID nøglekort? Eller vil udbredelsen måske netop være betinget af at et FIDO token af brugeren kan benyttes på tværs af disse segmenter? Og bliver det så typisk borgeren, arbejdsgiveren eller det offentlige, der kommer til at købe og betale et bredt anvendt token?</p>
+
+<p>FIDO U2F understøttes af <a href="https://fidoalliance.org/membership/members/">en række store spillere</a> i internet- tele- og betalingsindustrien. <a href="https://www.youtube.com/watch?v=EVx3QkJ8_J0">Google</a>, <a href="http://www.version2.dk/artikel/samsung-lancerer-mobilbetaling-med-et-fingeraftryk-i-sydkorea-151089">Samsung</a> samt <a href="http://blogs.windows.com/business/2015/02/13/microsoft-announces-fido-support-coming-to-windows-10/">Microsoft (fra Windows 10)</a> er blandt de første med praktiske implementeringer.</p>
+
+<p>Den førende leverandør af U2F tokens er pt. svenske Yubico, men nu er der kommet <a href="http://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&amp;field-keywords=fido+u2f+security+key&amp;rh=i%3Aaps%2Ck%3Afido+u2f+security+key">flere leverandører</a> på banen.</p>
+
+<p><a href="http://wayf.dk/">WAYF</a> og <a href="https://www.peercraft.com/">Peercraft</a> har begge leget med FIDO U2F og vil gerne have flere, der arbejder med autentifikation, på banen for sammen at kunne evaluere den praktiske anvendelse af FIDO. Vi afholder derfor en afgrænset hands-on workshop d. 19/5 fra kl. 9-15 på IT-Universitetet. Workshoppen indledes med ca. en times gennemgang af principperne, efterfulgt af install party, hvor deltagerne får mulighed for selv at køre U2F server i eget, foretrukket miljø. Der er enkelte ledige pladser. Skriv til <a href="mailto:hb@peercraft.com">hb@peercraft.com</a> for mere info, hvis det kunne være interessant for dig at deltage.</p>
+  </section>
+
+
+  </div></body></html>

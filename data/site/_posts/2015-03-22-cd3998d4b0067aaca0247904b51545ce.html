@@ -1,0 +1,65 @@
+---
+layout:     post
+title: 	    "iSCSI and Jumbo Frames"
+post_author:	    
+post_date:	    Sun, 22 Mar 2015 15:49:00 +0000
+post_site:	    xenserver.org 
+post_link:	    http://xenserver.org/blog/entry/iscsi-and-jumbo-frames.html
+---
+<html><body><div><div id="entry-86" class="blog-read blog-post clearfix">
+
+		
+		<div class="blog-brief clearfix ptl pbl mbl">
+													<div class="in">
+									
+					
+<div class="blog-avatar float-l prel" itemscope="" itemtype="http://schema.org/Person" itemprop="author">
+			<a href="http://xenserver.org/blog/blogger/listings/xenfomation.html" class="avatar float-l">
+			<img src="http://xenserver.org/images/easyblog_avatar/3040_jkbenedict-150x150.png" alt="JK Benedict" class="avatar isBlogger" itemprop="image"/><meta itemprop="name" content="JK Benedict"/></a>
+	</div>				
+				
+				
+
+				
+			</div>
+		</div>
+
+		<p class="blog-head mtm">
+						<h1 id="title-86" class="blog-title rip">iSCSI and Jumbo Frames</h1>
+		</p>
+
+		
+				<div class="blog-text clearfix prel mtm mbm">
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<p>So,you either just setup iSCSI or are having performance issues with your current iSCSI device. Here are some pointers to ensure "networking" is not the issue:<br/><br/> 1. MTU Settings<br/> Always check in XenCenter that your NICS responsible for storage are pointing to the correct target IPS. If they are, ensure you can ping these targets from within XenServer's command line:<br/><br/> Ping x.x.x.x<br/><br/> If you cannot ping the target, that may be the issue. Use the 'route' command to show if XenServer has a device and target to hit on the iSCSI Subnet. If route shows nothing related to your iSCSI target IPS or takes a long time to show the target's IP/Route information, revisit your network configuration: from the target to the storage interface defined for your XenServers. Odds are the packets are trying to route out via another gateway or there is a cable/vlan tagging issue. <br/><br/> 2. Is your network really setup for Jumbo Frames?<br/> If you can ping our iSCSI targets, but Re having performance issues with Jumbo Frames (9000 or 4500 Mtu size, based on vendor) ensure your storage interface on XenServer is configured to leverage this Mtu size.<br/><br/> One can also execute a ping command to see if there is fragmentation or support enabled for the larger MTUs:<br/><br/> Ping x.x.x.x -M do -s 8972<br/><br/> This tells XenServer to ping, without fragmenting frames, your iSCSI target with an Mtu of 9000 (the rest comes from the ping and other overhead, so use 8972).<br/><br/> If this return fragments or other errors, check the cabling from XenServer along with the switch settings AND iSCSI setup. Sometimes these attributes can be powered after firmware updates to the iSCSI enabled, managed storage devicd<br/><br/> 3. Always make sure your network firmware and drivers are up to date!<br/><br/> And these are but three was to isolate issues with iSCSi.<br/><br/> --jkbs | @xenfomation</p>
+			
+			
+										
+			
+			
+			
+			
+					</div>
+
+					
+		
+				
+		
+							
+		
+		
+		&#13;
+</div>
+
+	
+	</div></body></html>

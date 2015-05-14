@@ -1,0 +1,85 @@
+---
+layout:     post
+title: 	    "Is it really “containers vs. VMs”?"
+post_author:	    
+post_date:	    Wed, 08 Apr 2015 13:57:54 +0000
+post_site:	    xenserver.org 
+post_link:	    http://xenserver.org/blog/entry/is-it-really-containers-vs-vms.html
+---
+<html><body><div><div id="entry-87" class="blog-read blog-post clearfix">
+
+		
+		<div class="blog-brief clearfix ptl pbl mbl">
+													<div class="in">
+									
+					
+<div class="blog-avatar float-l prel" itemscope="" itemtype="http://schema.org/Person" itemprop="author">
+			<a href="http://xenserver.org/blog/blogger/listings/jamesbu.html" class="avatar float-l">
+			<img src="http://xenserver.org/images/easyblog_avatar/615_JamesBulpin_headshot_2012_200pixels.JPG" alt="James Bulpin" class="avatar isBlogger" itemprop="image"/>
+			<meta itemprop="name" content="James Bulpin"/>
+		</a>
+	</div>				
+				
+				
+
+				
+			</div>
+		</div>
+
+		<p class="blog-head mtm">
+						<h1 id="title-87" class="blog-title rip">Is it really “containers vs. VMs”?</h1>
+		</p>
+
+		
+				<div class="blog-text clearfix prel mtm mbm">
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<p>There are some in the Docker and container world that believe that there is some kind of competition between Docker and hypervisors; they would have us believe that containers render VMs, and therefore hypervisors, redundant. Is that really true? I think not. I believe that containers and VMs perform complementary roles and add value to each other.</p>&#13;
+<p>Let's look at what VMs and containers are really all about. Firstly let's consider what they have in common: they can both be used to encapsulate an application and therefore both use images containing the application, its libraries and other runtime dependencies (in fact you could argue that a <a href="http://www.docker.io">Docker</a> image is conceptually just a VM image without a kernel and init scripts). Hypervisor vendors have been telling us for years to have just one application per OS instance, that's the normal model with <a href="http://en.wikipedia.org/wiki/Amazon_Machine_Image">AWS AMIs</a> too – again, this looks just like a Docker image.</p>&#13;
+<p>But that's a top down, application-centric view. Let's now look at it from the infrastructure perspective. The boundary of a container is the boundary of an application, the separation between the internal workings of the applications and its external interface. The boundary of a VM is the boundary of the resource allocation, ownership, trust and availability of a piece of abstracted infrastructure.</p>&#13;
+<p>By separating these application and infrastructure boundaries we get more flexibility than if a single entity tries to implement both:</p>&#13;
+<ul>&#13;
+<li>I can put multiple application containers within one VM where they share the same level of trust and only have to worry about protecting the trust boundary once, rather than multiple times for individual applications. VMs' trust and ownership boundaries have long been used to provide multi-tenancy – this isn't just important in public clouds but matters for enterprises that increasingly see applications being provided by individual departments or individual employees.</li>&#13;
+</ul>&#13;
+<ul>&#13;
+<li>Applications often work together with other applications, that's why Docker has inter-container communication mechanisms such as <a href="https://docs.docker.com/userguide/dockerlinks/">"links"</a>. I can use the application container to keep each app nicely encapsulated and I can use the VM boundary to put a hard shell around the set of cooperating applications. I can also use this VM boundary to define the unit of resource accounting and reporting.</li>&#13;
+</ul>&#13;
+<ul>&#13;
+<li>I can put cooperating application containers in a VM to share a common availability boundary; if they're working together then I probably want them to fail and succeed together. Resource isolation boundaries are good for containing faults – I'd rather have the "blast radius" of a faulty container being the VM which contains that container and its collaborating applications rather than an entire server.</li>&#13;
+</ul>&#13;
+<p>So am I arguing that VMs are better than containers? Absolutely not. I believe that both mechanisms have a valuable part to play in the deployment of scalable, efficient, secure and flexible systems. That's why we're looking at ways to enhance XenServer to make it a great platform for running containers within VMs. Our recent <a href="http://xenserver.org/blog.html?view=entry&amp;id=85">preview of Docker integration</a> is just the start. As well as requests to support other Docker-optimized Linux distributions (the preview supports <a href="https://coreos.com/">CoreOS</a>) we heard that you want to see infrastructure level information made available to higher level management tools for audit and reporting. Stay tuned for more.</p>
+			
+			
+										
+			
+			
+			
+			
+					</div>
+
+					
+
+
+		
+				
+		
+							
+		
+		
+		&#13;
+&#13;
+	</div>
+
+	
+	
+
+</div></body></html>

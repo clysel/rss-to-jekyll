@@ -1,0 +1,52 @@
+---
+layout:     post
+title: 	    "Before Electing a New Pool Master"
+post_author:	    
+post_date:	    Mon, 29 Sep 2014 08:19:00 +0000
+post_site:	    xenserver.org 
+post_link:	    http://xenserver.org/blog/entry/before-electing-a-new-pool-master.html
+---
+<html><body><div><div class="blog-text clearfix prel mtm mbm">&#13;
+&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			<h2>Overview</h2>&#13;
+<p>The following is a reminder of specific steps to take before electing a new pool master - especially in High Availability-enabled deployments.  Albeit, there are circumstances where this will happen automatically due to High Availability (by design) or in an emergency situation, but never-the-less, the following steps should be taken when electing a new pool master where High Availability is enabled.</p>&#13;
+<h2>Disable High Availability</h2>&#13;
+<p>Before electing a new master one <strong>must disable </strong>High Availability.  The reason is quite simple:</p>&#13;
+<p>If a new host is designated as master with HA enabled, the subsequent processes and transition time can lead to HA see that a pool member is down.  It is doing what it is supposed to do from the "mathematical" sense, but from "reality" it is actually confused.</p>&#13;
+<p>The end result is that HA could either recover with some time or fence as it attempts to apply fault tolerance in contradiction to the desire to "simply elect a new master".</p>&#13;
+<p>It is also worth noting that upon recovery - if any Guests which had a mounted ISO are rebooted on another host - that "VDI not found" errors can appear although this is not the case.  The ISO image that is mounted is seen as a VDI and if that resource is not available on another host, the Guest VM will fail to resume: presenting the generic VDI error.</p>&#13;
+<h2>Steps to Take</h2>&#13;
+<p>HA must be disabled and for safe practice, I always recommend ejecting all mounted ISO images.  The latter can be accomplished by executing the following from the pool master:</p>&#13;
+<pre>xe vm-cd-eject --multiple</pre>&#13;
+<p>As for HA it can be disabled in two ways: via the command-line or from XenCenter.</p>&#13;
+<p>From the command line of the current pool master, execute:</p>&#13;
+<pre>xe pool-ha-disable</pre>&#13;
+<pre>xe pool-sync</pre>&#13;
+<p>If desired - just for safe guarding one's work - those commands can be executed on every other pool member.</p>&#13;
+<p>As for XenCenter one can select the Pool/Pool Master icon in question and from the "HA" tab, select the option to disable HA for the pool.</p>&#13;
+<h2>Workload Balancing</h2>&#13;
+<p>For versions of XenServer utilizing Workload Balancing it is not necessary to halt this.</p>&#13;
+<p>Now that HA is disabled, switch Pool Masters and when all servers are in an active state: re-enable HA from XenCenter or from the command line:</p>&#13;
+<pre>xe pool-recover-slaves</pre>&#13;
+<pre>xe pool-ha-enable<br/><br/></pre>&#13;
+<p>I hope this is helpful and as always: questions and comments are welcomed!</p>&#13;
+<p> </p>&#13;
+<p>--jkbs | @xenfomation</p>&#13;
+			&#13;
+			&#13;
+										&#13;
+			&#13;
+					</div>&#13;
+&#13;
+		&#13;
+					&#13;
+			
+</div></body></html>

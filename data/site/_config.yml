@@ -1,0 +1,11 @@
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            RSS News
+tagline:          NEWS
+url:              http://192.168.40.2:4000
+paginate:         60
+baseurl:          /
+

@@ -1,0 +1,40 @@
+---
+layout:     post
+title: 	    "XenServer Support Options"
+post_author:	    
+post_date:	    Thu, 15 Jan 2015 20:14:34 +0000
+post_site:	    xenserver.org 
+post_link:	    http://xenserver.org/blog/entry/xenserver-support-options.html
+---
+<html><body><div><div class="blog-text clearfix prel mtm mbm">&#13;
+&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			<p>Now that <a href="http://xenserver.org/blog/entry/creedence-launches-as-xenserver-6-5.html">Creedence has been released as XenServer 6.5</a>, I'd like to take this opportunity to highlight where to obtain what level of support for your installation.</p>&#13;
+<h3>Commercial Support</h3>&#13;
+<p><a href="http://www.citrix.com/support.html">Commercial support</a> is available from Citrix and many of its <a href="http://www.citrix.com/buy/partnerlocator.html">partners</a>. A <a href="http://store.citrix.com/store/citrix/pd/productID.282490100/pgm.95475100">commercial support contract</a> is appropriate if you're running XenServer in a production environment, particularly if downtime is a critical component of your SLA. It's important to note that commercial support is only available if the deployment follows the Citrix deployment guidelines, uses third party components from the <a href="http://www.citrix.com/ready">Citrix Ready Marketplace</a>, and is operated in accordance with the terms of the <a href="http://www.citrix.com/buy/licensing/agreements.html">commercial EULA</a>. Of course, since your deployment might not precisely follow these guidelines, commercial support may not be able to resolve all issues and that's where community support comes in.</p>&#13;
+<h3>Community Support</h3>&#13;
+<p>Community support is available from the <a href="http://discussions.citrix.com/forum/101-xenserver/">Citrix support forums</a>. The people on the forum are both Citrix support engineers and also your fellow system administrators. They are generally quite knowledgeable and enthusiastic to help someone be successful with XenServer. It's important to note that while the product and engineering teams may monitor the support forums from time to time, engineering level support should not be expected on the community forums.</p>&#13;
+<h3>Developer Support</h3>&#13;
+<p>Developer level support is available from the <a href="https://lists.xenserver.org/sympa/subscribe/xs-devel">xs-devel list</a>. This is your traditional development mailing list and really isn't appropriate for general support questions. Many of the key engineers are part of this list, and do engage on topics related to performance, feature development and code level issues. It's important to remember that the XenServer software is actually built from many upstream components, so the best source of information might be an upstream developer list and not xs-devel.</p>&#13;
+<h3>Self-support tool</h3>&#13;
+<p>Citrix maintains an self-support tool called <a href="https://taas.citrix.com/AutoSupport/">Citrix Insight Services</a>, formerly known as Tools-as-a-Service (TaaS). Insight Services takes a <a href="http://support.citrix.com/article/CTX125372">XenServer status report</a>, and analyzes it to determine if there are any operational issues present in the deployment. A best practice is to upload a report after installing a XenServer host to determine if any issues are present which can result in latent performance or stability problems. CIS is used extensively by the Citrix support teams, but doesn't require a commercial support contract for end users.</p>&#13;
+<h3>Submitting Defects</h3>&#13;
+<p>If you believe you have encountered a defect or limitation in the XenServer software, simply using one of these support options isn't sufficient for the incident to be added to the defect queue for evaluation. Commercial support users will need to have their case triaged and potentially escalated, with the result potentially being a hotfix. All other users will need to submit an incident report via <a href="https://bugs.xenserver.org">bugs.xenserver.org.</a> Please be as detailed as possible with any defect reports such that they can be reproduced, and it doesn't hurt to include the URL of any forum discussion or the TaaS ID in your report. Also, please be aware that while the issue may be urgent for you any potential fix may take some time to be created. If your issue is urgent, you are strongly encouraged to follow the commercial support route as Citrix escalation engineers have the ability to prioritize customer issues.</p>&#13;
+<p>Additionally, its important to point out that submitting a defect or incident report doesn't guarantee it'll be fixed. Some things simply work the way they do for very important reasons, other things may behave the way they do due to the way components interact. XenServer is tuned to provide a highly scalable virtualization platform, and if an incident would require destabilizing that platform, it's unlikely to be changed.</p>&#13;
+			&#13;
+			&#13;
+										&#13;
+			&#13;
+					</div>&#13;
+&#13;
+		&#13;
+					&#13;
+			
+</div></body></html>

@@ -1,0 +1,112 @@
+---
+layout:     post
+title: 	    "Emails fra danske universiteter suser en tur forbi Microsoft i udlandet"
+post_author:	    40707
+post_date:	    Tue, 17 Feb 2015 07:52:32 +0000
+post_site:	    www.version2.dk 
+post_link:	    http://www.version2.dk/artikel/koebenhavns-universitet-har-egen-exchange-server-men-sender-alligevel-mails-forbi-microsoft
+---
+<html><body><div><section class="body"><p>Whistleblower Edward Snowdens afsløringer af amerikanske myndigheders dataovervågning har blandt andet rejst en diskussion af, hvorvidt europæiske data er sikre i hænderne på amerikanskejede virksomheder eller ej. Danske universiteter har dog ikke noget problem med at sende mails, der principielt kan indeholde følsomme personoplysninger eller andre fortrolige data, forbi Microsoft-servere i udlandet.</p>
+
+
+
+<p>Mail-kommunikation til og fra Københavns Universitet bliver eksempelvis sendt en tur forbi et Microsoft-datacenter uden for landet. Også intern kommunikation bliver ifølge universitetet sendt forbi Microsofts vesteuropæiske datacentre, som ligger i henholdsvis Irland og Holland. Og i sjældne tilfælde, kan kommunikationen i princippet blive forbi servere uden for Europa, oplyser Microsoft.</p>
+
+<p>Mailtrafikken fra Aarhus Universitet bliver ligeledes sendt en tur forbi Microsofts servere uden for landets grænser. Hvorvidt den interne mailtrafik på Aarhus Universitet, som på Københavns Universitet, også bliver sendt forbi servere i udlandet, har det ikke været muligt at få oplyst.</p>
+
+<p>Lektor ved datalogisk institut på Københavns Universitet og blogger på Version2 Torben Mogensen er ikke begejstret for, at mails på universitetet konsekvent bliver sendt forbi servere i udlandet.</p>
+
+<p>»Jeg finder det selvfølgelig bekymrende, da mail ind og ud af huset kan indeholde fortrolig og personfølsom information, f.eks. i forbindelse med eksamener, hvor man kommunikerer med eksterne censorer og i forbindelse med ansættelsesager, hvor man kommunikerer med eksterne medlemmer af ansættelsesudvalg.  Min holdning er, at evt. filtrering af post skal ske på en lokal server,« skriver han i en mail.</p>
+
+<p>Københavns Universitet har egen mail-server stående. Forklaringen på, hvorfor trafikken alligevel bliver sendt en tur forbi Microsoft-domænet ku-dk.mail.protection.outlook.com er, at Københavns Universitet anvender en cloud-baseret antispam-løsning fra Microsoft. Derfor bliver mailtrafikken sendt forbi serverne uden for Danmark.</p>
+
+<p>Hvorvidt et lignende setup er forklaringen på, hvorfor mails til og fra Aarhus Universitet ser ud til at blive sendt forbi au-dk.mail.protection.outlook.com, har det ikke været muligt at få svar på, da universitetet ikke er vendt tilbage på Version2's henvendelser.</p>
+
+<p>Begge domæner ser ud til at køre forbi ip-adresser i Storbritannien, nærmere bestemt London. Microsoft oplyser, at selvom en ip-adresse i denne forbindelse måtte se ud til at ligge i eksempelvis London, så finder håndteringen af mails i forbindelse med virksomhedens cloud-baserede anti-spamløsning sted ved datacentrene i enten Irland eller Holland, hvad danske databehandleraftaler angår.</p>
+
+<h2>Professor: Mails er at sammenligne med et postkort</h2>
+
+<p>Godt nok er det ikke lykkedes at få en kommentar fra en it-sikkerhedsansvarlig på Aarhus Universitet, men professor og ekspert i kryptologi ved universitetet Ivan Damgård er vendt tilbage med sin egen holdning på en direkte henvendelse fra Version2. Og modsat Torben Mogensen finder Ivan Damgård det i udgangspunktet ikke problematisk, at mails bliver sendt forbi Microsofts servere i udlandet.</p>
+
+<p>»Som tingene ser ud i dag, så er en (ukrypteret) mail sammenligneligt med et postkort. Man har ingen reel kontrol over, hvilke nodes i Internettet den kommer forbi, og hvem 
+der kan have set den. Heller ikke selvom der bliver brugt TLS/SSL undervejs, for mailen vil jo findes i klartekst, mens den lagres temporært undervejs, og det kan ske mange steder,« skriver han i en mail.</p>
+
+<p>Ivan Damgård peger i den forbindelse på, at den eneste måde at sikre mailkommunikation, er ved at bruge end-to-end-kryptering. Altså kryptere mailindhold hos afsender og dekryptere det hos modtager. I privacy-sammenhæng er det underordnet, om mails kommer forbi en server hos Microsoft eller forbi en server et andet sted i verden, påpeger professoren.</p>
+
+<p>»Det her skyldes jo alt sammen, at når du først har bestemt dig til at sende noget på mail, så har du 'solgt din sjæl' til den måde Internettet virker på. Hvis det derimod havde handlet om, at AU lagrede sine interne data ukrypteret på en udenlandsk cloud, se det havde været en helt anden historie! Men mig bekendt er det ikke tilfældet,« skriver Ivan Damgård.</p>
+
+<p>Argumentet med, at mailkommunikation jo alligevel er usikkert, og at det derfor kan være hip som hap, om det kommer forbi den ene eller den anden server i udlandet, køber Torben Mogensen fra Københavns Universitet ikke.</p>
+
+<p>»Selvom email ikke er 100 procent sikkert, så mindskes sikkerheden for hvert ekstra led, der skydes ind mellem afsender og modtager, specielt hvis disse led ligger geografisk langt fra sender og modtager, da mailen skal routes gennem flere hop,« skriver Torben Mogensen, og tilføjer:</p>
+
+<p>»Det kommer i øvrigt ikke bag på mig, da en kollega på Aarhus Universitet, som før KU skiftede til Outlook, fortalte mig om dette. Såvidt jeg erindrer, blev selv lokale mails sendt forbi Microsofts servere i udlandet.«</p>
+
+<p>Ivan Damgård medgiver, det kan være problematisk, såfremt den interne mail-kommunikaton på Aarhus Universitet konsekvent bliver sendt ud af huset:</p>
+
+<p>»Hvis man kan godtgøre at en bestemt praksis virkelig udsætter data for mere 'exposure' end man behøver, så er det jo altid et problem.«</p>
+
+<h2>KU: Ikke noget problem med spamfilter</h2>
+
+<p>Henrik Larsen er informationssikkerhedschef på Københavns Universitet. Og ifølge ham, bliver også de interne mails på KU sendt forbi Microsofts servere i udlandet. Det ser han ikke noget problem i. Som Ivan Damgård fra Aarhus Universitet påpeger også Henrik Larsen, at mails per definition ikke er egnet til sikker kommunikation af eksempelvis følsomme personoplysninger.</p>
+
+<p>»Vi har valgt en Europa-løsning hos Microsoft, så mails bliver scannet i Storbritannien og/eller Holland. Og rent undtagelsesvis vil det kunne ske andre steder også. Eksempelvis USA. Men det sker ikke i udgangspunktet,« siger Henrik Larsen og tilføjer:</p>
+
+<p>»Også vores interne mails, bliver scannet i den løsning. Det er en afvejning. Vil vi risikere, at vi sender vores interne mails udenhus, eller vil vi påtage os selv at vedligeholde et spamfilter? Det er den ledelsesmæssige vurdering, der ligger i det.«</p>
+
+<p>Selvom han mener, at mails ikke bør indeholde følsomme personoplysninger, så kan Henrik Larsen heller ikke afvise, at det alligevel forekommer på Københavns Universitet fra tid til anden.</p>
+
+<p>»Det kan jeg ikke udelukke. Men jeg har givet mine anbefalinger, og vi har vores regler og politikker. Selvom det kun er tilladt at køre 80 km/h på landevejen, så er der jo alligevel nogen, der kører hurtigere.«</p>
+
+<p>Henrik Larsens anbefalinger er, at hvis man sender følsomme data jf. persondataloven paragraf 8 stk. 1, paragraf 7 stk. 1 eller mails indeholdende CPR-numre, så skal det ske krypteret.</p>
+
+<p>Paragrafferne omhandler blandt andet håndtering af oplysninger om racemæssige og helbredsmæssige forhold, samt oplysninger der vedrører strafbare forhold og væsentlige sociale problemer.</p>
+
+<p>I den forbindelse påpeger Henrik Larsen også, at der faktisk er en krypterings-løsning på universitetet, der er integreret i Outlook-mailklienten.</p>
+
+<p>»På trods af, at man strammer procedurerne, så sker der smuttere alligevel. Men det er helt klart min anbefaling, at man anvender kryptering. I forbindelse med KU-mail, der har vi en løsning, der hedder Bluewhale, som er integreret i den Outlook, alle brugere på KU har. Og den kan anvendes af alle,« siger han.</p>
+
+<h2>ITU kører med Microsoft Cloud</h2>
+
+<p>På IT-universitetet bliver Microsoft også anvendt til mails. Men her er der ikke blot tale om et spamfilter, men om, at blandt andet oplysninger i forbindelse med personaleadministration kan lagres via Microsofts cloud-tjeneste Office 365.</p>
+
+<p>I den forbindelse har universitet været igennem et større forløb, involverende Datatilsynet, som startede tilbage i 2012, og som tidligere har været omtalt her på Version2.</p>
+
+
+
+<p>ITU har angivet Microsoft som databehandler i forbindelse med to lovpligtige anmeldelser til Datatilsynet.</p>
+
+<p>»I hele den proces, vi var igennem, havde vi et tæt samarbejde med Datatilsynet og Microsoft,« siger it-chef på ITU Henrik Ejby Bidstrup.</p>
+
+<p>Den amerikanske whistleblower Edward Snowdens afsløringer om amerikanske myndigheders overvågning og indsamling af data har blandt andet rejst diskussion om, hvorvidt det er sikkert at opbevare oplysninger hos amerikanske virksomheder. Her har danske politiker blandt andet været bekymret over udsigten til, at amerikanskejede databehandlere kan blive presset til at udlevere også følsomme personoplysninger om danskere til USA</p>
+
+<p>Henrik Ejby Bidstrup mener dog, at der godt kan argumenteres for, at data ligger sikrere hos eksempelvis Microsoft end i en kælder på en server på et universitet.</p>
+
+<p>»Det er en stor diskussion. Microsoft er det mest angrebne mål i verden. Så de har en masse sikkerhed bygget op omkring grundstammen i deres løsning. De har musklerne til at have et sikkerhedsniveau, der er stort, i forhold til små virksomheder og andre.« siger han og tilføjer:</p>
+
+<p>»Det er ikke en ubetinget sandhed, at bare fordi det er in house, så er det mere sikkert.«</p>
+
+<p>Hverken Aarhus Universitet eller Københavns Universitet har ifølge en søgning via Datatilsynets hjemmeside anmeldt Microsoft som databehandler i forbindelse med de lovpligtige anmeldelser, universiteterne har indgivet til tilsynet. Og det er heller ikke nødvendigt, når blot der er tale om mails, der passerer gennem et spamfilter, fortæller Henrik Larsen for KU.</p>
+
+<p>»Der er forskel på, om mails bliver scannet under transport, eller om man opbevarer dem eksternt. Vores mails bliver opbevaret inhouse, og det bliver formodentlig ikke lagt ud nogen steder,« siger han.</p>
+
+<p>Københavns Universitet har dog en databehandleraftale med Microsoft i forhold til spamfilteret, understreger Henrik Larsen. Databehandleraftaler skal dog i udgangspunktet ikke godkendes af Datatilsynet.</p>
+
+<p>En databehandleraftale er en skriftlig aftale mellem en dataansvarlig og en databehandler, fremgår det af <a href="http://www.datatilsynet.dk/erhverv/dataansvarlig-databehandler/databehandler/">Datatilsynets hjemmeside</a>. Det skal fremgå af aftalen, at databehandleren alene handler efter instruks fra den dataansvarlige, og at databehandleren skal træffe forskellige tekniske og organisatoriske sikkerhedsforanstaltninger. Foranstaltningerne skal forhindre, at oplysninger:</p>
+
+<ul><li>hændeligt eller ulovligt tilintetgøres, fortabes eller forringes. </li>
+<li>kommer til uvedkommendes kendskab eller misbruges, eller</li>
+<li>i øvrigt behandles i strid med lov om behandling af personoplysninger.</li>
+</ul><h2>Microsoft: Vores aftaler overholder dansk lovgivning</h2>
+
+<p>Teknologidirektør hos Microsoft Danmark Ole Kjeldsen fortæller, at de mails, der kommer forbi spamfilteret i eksempelvis Dublin, ikke bliver lagret. Det vil sige, at der hverken sker en lagring af mailindhold eller personhenførbare data generelt. Uden at kende de tekniske detaljer i anti-spamløsningen til bunds, vil Ole Kjeldsen dog ikke afvise, at der for at stoppe spam kan ske en lagring af det, han beskriver som signaturer for mails.</p>
+
+<p>Han fortæller desuden, at de databehandleraftaler, Microsoft indgår med kunder, bygger på standardkontrakter, som opfylder bestemmelserne i dansk lovgivning.</p>
+
+<p>»Vi garanterer til enhver tid, at vi behandler vores kunders data efter gældende lovgivning. Det vil sige, at hvis det er en dansk kunde, der har en aftale med os, så er det dansk lovgivning, vi overholder.«</p>
+
+<p>Derudover fortæller han, at data lagret i forbindelse med en databehandleraftale i udgangspunktet befinder sig inden for EU i datacentrene ved Dublin i Irland eller ved Amsterdam, Holland.</p>
+
+<p>Dog kan det principielt ske, at data opbevaret i centrene bevæger sig uden for EU også.</p>
+
+<p>»Men det sker nu absolut meget sjældent. Det skulle være, hvis begge vores datacentre går ned samtidig. Så kan der være behov for at føre data uden for EU, men det er ikke sket indtil videre,« siger Ole Kjeldsen.</p>
+  </section></div></body></html>

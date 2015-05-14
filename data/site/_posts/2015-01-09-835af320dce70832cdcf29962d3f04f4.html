@@ -1,0 +1,34 @@
+---
+layout:     post
+title: 	    "Understanding why certain Creedence builds don't work with certain features"
+post_author:	    
+post_date:	    Fri, 09 Jan 2015 20:23:49 +0000
+post_site:	    xenserver.org 
+post_link:	    http://xenserver.org/blog/entry/understanding-why-certain-creedence-builds-don-t-work-with-certain-features.html
+---
+<html><body><div><div class="blog-text clearfix prel mtm mbm">&#13;
+&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			<p>Over the year end break, there were a couple of posts to the list which asked a very important question: "Does the DVSC work with the Release Candidate?" The answer was a resounding "maybe", and this post is intended to help clarify some of the distinction between what you get from xenserver.org, what you get from citrix.com, and how everything is related.</p>&#13;
+<p>At this point most of us are already familiar with XenServer virtualization being "open source", and that with XenServer 6.2 there was no functional difference between the binary you could download from citrix.com and that from xenserver.org. Logically, when we started the Creedence pre-release program, many assumed that the same download would exist in both locations, and that everything which might be part of a "XenServer" would also always be open source. That would be really cool for many people, and potentially problematic for others.</p>&#13;
+<p>The astute follower of XenServer technology might also have noticed that several things commonly associated with the XenServer product never had their source released. StorageLink is a perfect example of this. Others will have noticed that the XenServer Tech Preview run on citrix.com included a number of items which weren't present in any of the xenserver.org pre-release builds, and for which the sources aren't listed on xenserver.org. There is of course an easy explanation for this, but it goes to the heart of what we're trying to do with xenserver.org.</p>&#13;
+<p>xenserver.org is first and foremost about the XenServer platform. Everyone associated with xenserver.org, and by extension the entire team, would love for the data centers of the world to standardize on this platform. The core platform deliverable is called main.iso, and that's the thing from which you install a XenServer host. The source for main.iso is readily available, and other than EULA differences, the XenServer host will look and behave identically regardless of whether main.iso came from xenserver.org or citrix.com. The beauty of this model is that when you grow your XenServer based data center to the point where commercial support makes sense, the software platform you'd want supported is the same.</p>&#13;
+<p>All of which gets me back to the DVSC (and other similar components). DVSC, StorageLink and certain other "features" include source code which Citrix has access to under license. Citrix provides early access to these feature components to those with a commercial relationship. Because there is no concept of a commercial relationship with xenserver.org, we can't provide early access to anything which isn't part of the core platform. Now of course we do very much want everyone to obtain the same XenServer software from both locations, so when an official release occurs, we mirror it for your convenience.</p>&#13;
+<p>I hope this longish explanation helps clarify why when questions arise about "features" not present in main.iso that the response isn't as detailed as some might like. It should also help explain why components obtained from prior "Tech Preview" releases might not work with newer platform builds obtained as part of a public pre-release program.</p>&#13;
+			&#13;
+			&#13;
+										&#13;
+			&#13;
+					</div>&#13;
+&#13;
+		&#13;
+					&#13;
+			
+</div></body></html>

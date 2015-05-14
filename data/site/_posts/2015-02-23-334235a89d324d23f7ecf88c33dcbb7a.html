@@ -1,0 +1,76 @@
+---
+layout:     post
+title: 	    "Harddisken skal smadres fysisk: Udødelig malware kan også florere i Danmark"
+post_author:	    Jakob Møllerhøj
+post_date:	    Mon, 23 Feb 2015 05:29:40 +0000
+post_site:	    www.version2.dk 
+post_link:	    http://www.version2.dk/artikel/harddisken-skal-smadres-fysisk-udoedelig-malware-kan-ogsaa-florere-i-danmark-82027?utm_medium=feed&utm_source=version2.dk&utm_campaign=it_nyheder
+---
+<html><body><div><section class="body"><p>Forestil dig noget rigtig træls malware. Læg lidt til. Og så har du muligvis et billede af den malware, som <a href="https://securelist.com/files/2015/02/Equation_group_questions_and_answers.pdf">Kaspersky Lab for nyligt har afdækket (PDF)</a>, og som har floreret de seneste år.</p>
+
+<p>It-sikkerhedsvirksomheden tilskriver softwaren den såkaldte Equation Group. Flere har påpeget, det kan være det samme som NSA. Men som så ofte med den slags ting, er det svært at bevise entydigt, og Kaspersky nævner da heller ikke selv, det amerikanske spionagentur i den sammenhæng.</p>
+
+<p>Det er der flere andre der gør. <a href="http://arstechnica.com/security/2015/02/how-omnipotent-hackers-tied-to-the-nsa-hid-for-14-years-and-were-found-at-last/">Eksempelvis teknologimediet Arstechnica</a> peger på flere sammenfald mellem metoder, der tidligere er blevet tilskrevet NSA - blandt andet i kraft af whistlebloweren Edward Snowdens afsløringer - og så det arbejde, som Kaspersky tilskriver Equation Group i den seneste rapport.</p>
+
+<p><a href="https://securelist.com/blog/research/68750/equation-the-death-star-of-malware-galaxy/">Og under Kasperskys skriv om rapporten</a> er der eksempelvis en læser, der påpeger i debatten, at tyske Spiegel har bragt et læk, hvor NSA i 2006 i et stillingsopslag skulle søge én med forstand på overskrivning af harddisk-firmware.</p>
+
+
+
+<p>Sådan en funktionalitet må formodes at være enhver it-sikkerhedsansvarligs absolutte mareridt. Med Kasperskys afdækning af Equation Groups arbejde viser det mareridt sig også at være den skinbarlige virkelighed.</p>
+
+<p>En funktion i et større malware-framework, der overskriver firmware i gængse harddisk-mærker - eksempelvis Western Digital - er en realitet. Tilfælde, hvor Equation Group har anvendt den malware, der kan overskrive firmwaren i harddiske, lader heldigvis til ikke at være sket i flæng.</p>
+
+<p>Så hvis du læser dette og spekulerer på, om det system, der styrer din harddisk indeholder virus, så er der formentlig ikke grund til panik. Der er dog et problem i den sammenhæng.</p>
+
+<h2>Ikke muligt at detektere</h2>
+
+<p>Det er i udgangspunktet ikke muligt at detektere, hvorvidt firmwaren på harddisken faktisk er kompromitteret. Det skyldes den måde harddiske er indrettet på.</p>
+
+<p>»Når først harddisken bliver inficeret med den ondsindede payload, så er det umuligt at scanne dens firmware. For at sige det enkelt: på de fleste harddiske er der funktionalitet, der gør det muligt at skrive ind i hardwarens firmware-område, men der er ikke nogen funktioner til at læse tilbage igen. Det vil sige, at vi i praksis er blinde, og at vi ikke kan detektere harddiske, der er blevet inficeret med denne malware,« skriver Igor Soumenkov, principal security researcher ved Kaspersky Lab i en mail til Version2.</p>
+
+<p>Han fortæller, at Kaspersky har fået fat på to omprogrammeringsmoduler til harddiskes firmware fra to forskellige malware-frameworks. EquationDrug og GrayFish. EquationDrug har været aktivt siden 2003. GrayFish siden 2008.</p>
+
+<p>Equation Groups malware er blevet observeret i mere end 30 lande, herunder Iran, Rusland, Syrien, Afghanistan, Kasakhstan, Belgien, Somalia, Hong Kong, Libyen, De Forenede Arabiske Emirater, Irak, Nigeria, Ecuador, Mexico, Malaysia, USA, Sudan, Libanon, Palæstina, Frankrig, Tyskland, Singapore, Qatar, Pakistan, Yemen, Mali, Schweiz, Bangladesh, Sydafrika, Filippinerne, Storbritannien, Indien og Brasilien.</p>
+
+
+
+<p>Og altså ikke i Danmark. Men da det i udgangspunktet ikke er muligt at se, hvorvidt en harddisk har fået overskrevet firmwaren, kan danske virksomheder og organisationer reelt set heller ikke være sikre på styresystemet i deres deres harddiske.</p>
+
+<p>Forekomsten af firmware-overskrivningsmalwaren betegner Igor Soumenkov dog som ekstremt sjældent.</p>
+
+<p>»Det er formentlig forbeholdt meget værdifulde ofre eller nogle ganske særlige omstændigheder. Hvis ikke brugeren har noget at gøre med ekstra-hemmelig forskning eller lignende, så er chancen for, harddisk-firmwaren er inficeret tæt på nul.«</p>
+
+<p>Det er godt nyt. For malwaren i harddisk-firmwaren er svært problematisk er flere årsager.</p>
+
+<h2>Kan genoplive sig selv</h2>
+
+<p>Dels betyder det, at uanset hvor grundigt disken formateres eller overskrives, vil det ikke være muligt at komme alle tidligere lagrede bits og bytes til livs. Malwaren kan nemlig lave et hemmeligt lager på disken med indhentede data fra en organisation, som kan hentes frem af bagmændene ved senere lejlighed.</p>
+
+<p>Derudover er det ifølge Igor Soumenkov muligt at inficere en ellers ren maskine med den kompromitterede malware.</p>
+
+<p>»Hvis malwaren kommer ind i firmwaren, så er den i stand til at genoplive sig selv for evigt. Den kan forhindre sletning af visse disksektorer eller udskifte dem med ondsindede (sektorer, red.) under boot,« forklarer Igor Soumenkov.</p>
+
+<p>Så malware, der ikke kan detekteres, kan oprette et hemmeligt lager på disken, der ikke kan slettes - og i øvrigt inficere en ellers renset maskine med skadelig software.</p>
+
+<p>Men hvad skal man gøre, hvis man vil være helt sikker på, at man ikke er inficeret, vil nogen måske spørge. Særligt hvis ‘nogen’ er en organisation, der arbejder med særdeles følsomme oplysninger.</p>
+
+<p>Igor Soumenkov har et forslag.</p>
+
+<p>»Hvis firmwaren allerede er inficeret, så det eneste man kan gøre at fysisk ødelægge harddisken og erstatte den med en ny. Bare at smide disken væk er ikke en mulighed, da disken stadig kan indeholde et skjult område med vigtige oplysninger indsamlet fra systemet.«</p>
+
+<p>Fysisk ødelæggelse af disken behøver i den forbindelse ikke inkludere noget med en hammer. Et instrument der næppe heller vil være særligt effektivt til fjerne data helt, såfremt lagerenheden fungerer via magnetiserede plader. <a href="http://en.wikipedia.org/wiki/Degaussing#Magnetic_data_storage_media">Degaussing</a> af disken, der med et kraftigt magnetfelt ødelægger data, vil formentlig kunne gøre det.</p>
+
+<h2>DI maner til besindighed</h2>
+
+<p>Version2 har spurgt Center for Cybersikkerhed til, hvordan danske myndigheder og virksomheder bør forholde sig i lyset af Kasperskys afdækning af Equation Groups arbejde gennem årene og herunder altså malware, der ikke kan detekteres eller fjernes.</p>
+
+<p>Center for Cybersikkerhed er foreløbigt vendt tilbage med en midlertidig melding om, at Version2's spørgsmål er vendt internt.</p>
+
+<p>Henning Mortensen, sikkerhedsmand og chefkonsulent hos erhvervsorganisationen DI's tele- og it-gren, ITEK, fortæller i en mail, at han er bekendt med Kaspersky-rapporten om Equation Group. Og han mener bestemt ikke, der er grund til at opfordre til en større storage-udskiftning i danske organisationer.</p>
+
+<p>»Som udgangspunkt maner vi til besindighed. Der er ikke meget der tyder på stor udbredelse i Danmark, og vi har ikke haft henvendelser vedrørende dette angreb. Med tiden kommer der forhåbentlig et værktøj, som kan identificere inficerede diske,« skriver Henning Mortensen i en mail.</p>
+
+<p>Derudover henviser han til de Command &amp; Control-servere, som <a href="https://securelist.com/files/2015/02/Equation_group_questions_and_answers.pdf">Kaspersky-rapporten (PDF)</a> nævner, og som er blevet brugt til at fjernstyre malwaren.</p>
+
+<p>»Det virksomheder kan gøre, er at identificere og evt. blokere kommunikation til de domæner for C&amp;C-servere, som Kaspersky har fremlagt. Hvis man af en eller anden grund er sikker på, at man er inficeret og disken indeholder følsomme data, må man tage sin disk off-line og prøve at kopiere data.«</p>
+  </section></div></body></html>

@@ -1,0 +1,87 @@
+---
+layout:     post
+title: 	    "Creedence launches as XenServer 6.5"
+post_author:	    
+post_date:	    Tue, 13 Jan 2015 15:30:35 +0000
+post_site:	    xenserver.org 
+post_link:	    http://xenserver.org/blog/entry/creedence-launches-as-xenserver-6-5.html
+---
+<html><body><div><div id="entry-78" class="blog-read clearfix">&#13;
+&#13;
+		&#13;
+							&#13;
+		&#13;
+		&#13;
+		<p class="blog-head mtm">&#13;
+						<h1 id="title-78" class="blog-title rip" itemprop="name">Creedence launches as XenServer 6.5</h1>&#13;
+		</p>&#13;
+&#13;
+		<div class="blog-brief ptl pbl mbl">&#13;
+			<div class="in clearfix">&#13;
+									&#13;
+					
+<div class="blog-avatar float-l prel" itemscope="" itemtype="http://schema.org/Person" itemprop="author">
+			<a href="http://xenserver.org/blog/blogger/listings/tim.html" class="avatar float-l">
+			<img src="http://xenserver.org/images/easyblog_avatar/606_bio_head.jpg" alt="Tim Mackey" class="avatar isBlogger" itemprop="image"/></a>
+	</div>				&#13;
+				&#13;
+				
+&#13;
+				&#13;
+			</div>&#13;
+		</div>&#13;
+&#13;
+		&#13;
+		&#13;
+		&#13;
+				<div class="blog-text clearfix prel mtm mbm">&#13;
+&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			<p>Today the entire XenServer team is very proud to announce that Creedence has <a href="http://www.citrix.com/news/announcements/jan-2015/citrix-introduces-next-generation-xenserver-for-the-software-def.html" target="_blank">officially been released as XenServer 6.5</a>. It is available for <a href="http://xenserver.org/overview-xenserver-open-source-virtualization/download.html">download from xenserver.org</a>, and is recommended for all new XenServer installs. We're so confident in what has been produced that I'm encouraging all XenServer 6.2 users to upgrade at their earliest convenience. So what have we actually accomplished?</p>&#13;
+<h3>The headline features</h3>&#13;
+<p>Every product release I've ever done, and there have been quite a large number over the years, has had some headline features; but Creedence is a bit different. Creedence wasn't about new features, and Creedence wasn't about chasing some perceived competitor. Creedence very much was about getting the details right for XenServer. It was about creating a very solid platform upon which anyone can comfortably, and successfully, build a virtualized data center regardless of workload. Creedence consisted of a lot of mundane improvements whose combination made for one seriously incredible outcome; Creedence restored the credibility of XenServer within the entire virtualization community. We even made up some <a href="http://xenserver.org/blog/entry/trading-for-creedence-shirts.html">t-shirts that the cool kids want</a> ;)</p>&#13;
+<p>So let's look at some of those mundane improvements, and see just how significant they really are.</p>&#13;
+<ul><li>64 bit dom0 freed us from the limitations of dreaded Linux low memory, but also allows us to use modern drivers and work better with modern servers. From personal experience, when I took alpha.2 and installed it on some of my test Dell servers, it automatically detected my hardware RAID without my having to jump through any driver disk hoops. That was huge for me.</li>&#13;
+<li>The move to a 3.10 kernel from kernel.org meant that we were out of the business of having a completely custom kernel and corresponding patch queue. Upstream is goodness.</li>&#13;
+<li>The move to the Xen Project hypervisor 4.4 meant that we're now consuming the most stable version of the core hypervisor available to us.</li>&#13;
+<li>We've updated to an ovs 2.10 virtual switch giving us improved network stability when the virtual switch is under serious pressure. While we introduced the ovs way back in December of 2010, there remained cases where the legacy Linux bridge worked best. With Creedence, those situations should be very few and far between</li>&#13;
+<li>A thread per vif model was introduced to better ensure network hogs didn't impact adjacent VM performance</li>&#13;
+<li>Network datapath optimizations allow us to drive line rate for 10Gbps NICs, and we're doing pretty well with 40Gbps NICs.</li>&#13;
+<li>Storage was improved through an update to tapdisk3, and the team did a fantastic job of engaging with the community to provide performance details. Overall we've seen very significant improvements in aggregate disk throughput, and when you're virtualizing it's the aggregate which matters more than the single VM case.</li>&#13;
+</ul><p>What this really means for you is that XenServer 6.5 has a ton more headroom than 6.2 ever did. If you happen to be on even older versions, you'll likely find that while 6.5 looks familiar, it's not quite like any other XenServer you've seen. As has been said multiple times in blog comments, and by multiple people, this <strong>is</strong> going to be the best release ever. In his blog, Steve Wilson has a few <a href="http://blogs.citrix.com/2015/01/13/xenserver-6-5/">performance graphs</a> to share for those doubters. </p>&#13;
+<h3>The future</h3>&#13;
+<p>While today we've officially released Creedence, much more work remains. There is a backlog of items we really want to accomplish, and you've already provided a pretty long list of features for us to figure out how to make. The next project will be unveiled very soon, and you can count on having access to it early and being able to provide feedback just as the thousands of pre-release participants did for Creedence. Creedence is very much a success of the community as it is an engineering success.</p>&#13;
+<p>Thank you to everyone involved. The hard work doesn't go unnoticed.     </p>&#13;
+			&#13;
+			&#13;
+										&#13;
+			&#13;
+					</div>&#13;
+&#13;
+		&#13;
+					&#13;
+			
+<span class="blog-rating">
+	&#13;
+</span>		&#13;
+&#13;
+&#13;
+					
+
+
+		&#13;
+							&#13;
+		&#13;
+		&#13;
+		&#13;
+</div>&#13;
+&#13;
+	&#13;
+	</div></body></html>

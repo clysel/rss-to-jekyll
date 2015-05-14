@@ -1,0 +1,51 @@
+---
+layout:     post
+title: 	    "Increasing Ubuntu's Resolution"
+post_author:	    
+post_date:	    Wed, 15 Oct 2014 09:47:00 +0000
+post_site:	    xenserver.org 
+post_link:	    http://xenserver.org/blog/entry/increasing-ubuntu-s-resolution.html
+---
+<html><body><div><div class="blog-text clearfix prel mtm mbm">&#13;
+&#13;
+			&#13;
+						<div>&#13;
+				<a href="http://xenserver.org/images/easyblog_images/3040/20100716_ubuntu_logo.png" class="easyblog-thumb-preview"><img src="http://xenserver.org/images/easyblog_images/3040/2e1ax_default_entry_20100716_ubuntu_logo.png" class="blog-image"/></a>&#13;
+			</div>&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			<h2>Maximizing Desktop Real-estate with Ubuntu</h2>&#13;
+<p>With the addition of Ubuntu (and the likes) to Creedence, you may have noticed that the default resolution is 1024x768.  I certainly noticed it and with much work on 6.2 and Creedence Beta, I have a quick solution to maximizing the screen resolution for you.</p>&#13;
+<p>The thing to consider is that a virtual frame buffer is what is essentially being used.  You can re-invent X configs all day, but the shortest path is to - first - ensure that that the following files are installed on your Ubuntu guest VM:</p>&#13;
+<pre>sudo apt-get install xvfb xfonts-100dpi xfonts-75dpi xfstt</pre>&#13;
+<p>Once that is all done installing, the next step is to edit Grub -- specifically /etc/default/grub:</p>&#13;
+<p>sudo vi /etc/default/grub</p>&#13;
+<p>Considering your monitor's maximum resolution (or not if you want to remote into Ubuntu using XRDP), look for the variable <strong>GRUB_GFXMODE</strong>.  This is where you can specify your desired BOOT resolutions that we will instruct the guest VM to SUSTAIN into user-space:</p>&#13;
+<pre>GRUB_GFXMODE=1280x960,1280x800,1280x720,1152x768,1152x700,1024x768,800x600</pre>&#13;
+<p>Next, adjust the variable <strong>GRUB_PAYLOAD_LINUX </strong>to equal keep, or:</p>&#13;
+<pre>GRUB_PAYLOAD_LINUX=keep</pre>&#13;
+<p>Save the changes and be <strong>certain </strong>to execute the following:</p>&#13;
+<pre>sudo update-grub</pre>&#13;
+<pre>sudo reboot</pre>&#13;
+<p>Now, you will notice that even during the boot phase that the resolution is large and this will carry into user space: Lightdm, Xfce, and the likes.</p>&#13;
+<p>Finally, I would highly suggest installing XRDP for your Guest VM.  It allows you to access that Ubuntu/Xbunutu/etc desktop remotely.  Specific details regarding this can be found through Ubuntu's forum:</p>&#13;
+<p><a href="http://askubuntu.com/questions/449785/ubuntu-14-04-xrdp-grey" target="_blank">http://askubuntu.com/questions/449785/ubuntu-14-04-xrdp-grey</a></p>&#13;
+<p><br/>Enjoy!</p>&#13;
+<p>--jkbs | @xenfomation</p>&#13;
+<h2> </h2>&#13;
+<h2> </h2>&#13;
+			&#13;
+			&#13;
+										&#13;
+			&#13;
+					</div>&#13;
+&#13;
+		&#13;
+					&#13;
+			
+</div></body></html>

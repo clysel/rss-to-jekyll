@@ -1,0 +1,42 @@
+---
+layout:     post
+title: 	    "Introducing XenServer Dundee"
+post_author:	    
+post_date:	    Tue, 28 Apr 2015 22:05:05 +0000
+post_site:	    xenserver.org 
+post_link:	    http://xenserver.org/blog/entry/introducing-xenserver-dundee.html
+---
+<html><body><div><div class="blog-text clearfix prel mtm mbm">
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<p>It's spring time and after a particularly <a href="https://www.google.com/search?q=boston+winter+2015&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=TLc2VYiJL8rJtQXfqYHoBA&amp;ved=0CAcQ_AUoAQ&amp;biw=1280&amp;bih=933">brutal winter here in Boston</a>, I for one am happy to see the signs of spring. Grass and greenery, flowers budding, and warmer days all speak to good things coming. It's also time to unveil the next major XenServer project, code named Dundee. As with Creedence last year, we're going to be giving early access to a major new version of XenServer well in advance of its release. This project will have its share of functional improvements, and a few new features, but just like last year we're going to start with the platform and progress slowly.</p>&#13;
+<h2>CentOS 7 dom0</h2>&#13;
+<p>During the Creedence pre-release program, many commented on "Why CentOS 5.x? - CentOS 6 has been out for a while, and 7 is fresh". The answer to that question was pretty simple. We knew what userspace looked like with CentOS 5.x, and our users understood how to manage a CentOS 5.x system. CentOS 5 was being supported upstream until 2017, so there was no risk of us having something unsupported. Moving to CentOS 6.5 would've been a valid option if we didn't already plan on moving to CentOS 7, but we didn't want to change dom0 just to change it again in a years time. Plus if you recall, we took on quite a bit with Creedence in 2014.</p>&#13;
+<p>So we're now a year later, and CentOS 7 makes perfect sense for dom0. Not only are there a few more upstream patches available, but Linux admins are now more comfortable with the changes in management paradigm. It's also those changes in paradigm which may present issues for you our users, and why this first alpha is all about validation. If you manage XenServer from a tool which uses the xapi SDK, then you shouldn't really experience too many problems. On the other hand, if you've favorite scripts, or tweaks you've made to configuration files, then you could be in for some extra work.</p>&#13;
+<p>Now is also a perfect time to remind everyone that when you "upgrade" a XenServer, it's not an in place upgrade. We preserve the configuration files we know about, and then dom0 is reimaged. Any third party packages you have installed, custom scripts, and manual configuration changes have a good chance of being lost unless you've backed them up. In this case, with a move to CentOS 7, it's also possible that those items will need to be reworked to some degree.</p>&#13;
+<h2>Understanding the pre-release process</h2>&#13;
+<p>All pre-release downloads will be on our <a href="http://xenserver.org/preview">pre-release download page</a>. We'll be providing new tagged builds every few weeks, and generally as we achieve internal milestones. With each build, we'll call out something which you as an interested participant in XenServer Dundee should be looking at. Issues encountered can be logged in the incident database at <a href="https://bugs.xenserver.org">https://bugs.xenserver.org</a>. Since we've more than one version of XenServer covered in the incident database, please make certain you report Dundee issues under the "Dundee" version. Of course there is no guarantee we'll be able to resolve what you find, but we do want to know about it. With this first alpha, we’re interested in the “big issues” you may hit, i.e. areas which would block usage of features or functionality or cases where there is a major impact. These are really useful as the product develops and matures during the alpha stage. If you are developing something for XenServer, we invite you to ask your questions on the <a href="http://xenserver.org/discuss-virtualization/mailing-lists.html">development mailing list</a>, but do remember it's not a product support list.</p>&#13;
+<p>Lastly, while we're in a pre-release period, its also likely you may eventually encounter functionality which may form part of a commercial edition. At this point we're not committing to what functionality will actually ship, when it might ship, or if it'll require a commercial license. I understand that might be concerning, but it shouldn't be. If something is destined for a commercial edition, you'll see it "commercialized" in a Citrix Tech Preview before we release. Historically we're many months away from when a Tech Preview might happen, so right now the most important thing is to focus on the changes we're interested in your feedback on today - everything to do with a CentOS 7 dom0.</p>&#13;
+<p> </p>&#13;
+<p>Download Dundee alpha.1: <a href="http://xenserver.org/preview">http://xenserver.org/preview</a></p>
+			
+			
+										
+			
+			
+			
+			
+					</div>
+
+					
+
+</div></body></html>

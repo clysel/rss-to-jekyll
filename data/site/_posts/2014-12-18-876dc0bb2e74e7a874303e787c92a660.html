@@ -1,0 +1,88 @@
+---
+layout:     post
+title: 	    "Creedence Release Candidate Available"
+post_author:	    
+post_date:	    Thu, 18 Dec 2014 19:31:08 +0000
+post_site:	    xenserver.org 
+post_link:	    http://xenserver.org/blog/entry/creedence-release-candidate-available.html
+---
+<html><body><div><div id="entry-75" class="blog-read clearfix">&#13;
+&#13;
+		&#13;
+							&#13;
+		&#13;
+		&#13;
+		<p class="blog-head mtm">&#13;
+						<h1 id="title-75" class="blog-title rip" itemprop="name">Creedence Release Candidate Available</h1>&#13;
+		</p>&#13;
+&#13;
+		<div class="blog-brief ptl pbl mbl">&#13;
+			<div class="in clearfix">&#13;
+									&#13;
+					
+<div class="blog-avatar float-l prel" itemscope="" itemtype="http://schema.org/Person" itemprop="author">
+			<a href="http://xenserver.org/blog/blogger/listings/tim.html" class="avatar float-l">
+			<img src="http://xenserver.org/images/easyblog_avatar/606_bio_head.jpg" alt="Tim Mackey" class="avatar isBlogger" itemprop="image"/></a>
+	</div>				&#13;
+				&#13;
+				
+&#13;
+				&#13;
+			</div>&#13;
+		</div>&#13;
+&#13;
+		&#13;
+		&#13;
+		&#13;
+				<div class="blog-text clearfix prel mtm mbm">&#13;
+&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			<p>Just in time for the holiday season - we're pleased to announce a another tech toy for the geeks of the world to play with. Now of course XenServer is serious business, but just like many kids toys, the arrival of Creedence is eagerly awaited by many. As I mentioned <a href="http://xenserver.org/blog/entry/status-of-creedence.html">earlier this week</a>, you'll have to wait a bit longer for the official release, but today you can download the release candidate and see exactly what the world of Creedence should look like. Andy also mentioned last week that we're <a href="http://xenserver.org/discuss-virtualization/virtualization-blog/entry/xenserver-pre-release-programme.html">closing out the alpha/beta program</a>, and as part of that effort the nightly Creedence snapshot page has been removed. You can still access the final beta (beta.3) on the <a href="http://xenserver.org/overview-xenserver-open-source-virtualization/prerelease.html">pre-release page</a>, but all prior builds have been removed. The pre-release page is also where you can download the release candidate.</p>&#13;
+<h3>What's in the Release Candidate</h3>&#13;
+<h4>Performance tuning</h4>&#13;
+<p>The release candidate contains a number of bug fixes, but also has had some performance tuning done on it. This performance tuning is a little bit different than what we normally talk about, so if you've been benchmarking Creedence, you'll want to double check with the release candidate. What we've done is take a look at the interaction of a variety of system components and put in some limits on how hard we'll let you push them. Our first objective is a rock solid system, and while this work doesn't result in any configuration limit changes (at least not yet - that comes later in our cycle), it could reduce some of the headroom you might have experienced with a prior build. It's also possible that you could experience better headroom due to an overall improvement in system stability, so doing a performance test or two isn't a bad idea.</p>&#13;
+<h4>Core bug fixes over beta.3</h4>&#13;
+<ul><li>mulitpath.conf is now preserved as multipath.conf.bak on upgrade</li>&#13;
+<li>The default cpufreq governor is now set to performance</li>&#13;
+<li>Fixes for XSA-109 through XSA-114 inclusive</li>&#13;
+<li>Increase the number of PIRQs to more than 256 to support large quantities of NICs per host</li>&#13;
+</ul><h3>What we'd like you to do with this build</h3>&#13;
+<p>The core two things we'd like you to do with this build are:</p>&#13;
+<ol><li>If you've reported any issue at <a href="https://bugs.xenserver.org">https://bugs.xenserver.org</a>, please validate that we did indeed get the issue addressed.</li>&#13;
+<li>If you can, run this <a href="http://xenserver.org/overview-xenserver-open-source-virtualization/prerelease.html">release candidate</a> through its paces. We think it's nice and solid, and hope you do too.</li>&#13;
+</ol><p>Lastly, I'd like to take this opportunity to wish everyone in our community a festive end to 2014 and hope that what ever celebrating you might do is enjoyable. 2014 was an exciting year for XenServer, and that's in large part to the contributions of everyone reading this blog and working with Creedence. Thank you.</p>&#13;
+<p> </p>&#13;
+<p>-tim     </p>&#13;
+			&#13;
+			&#13;
+										&#13;
+			&#13;
+					</div>&#13;
+&#13;
+		&#13;
+					&#13;
+			
+<span class="blog-rating">
+	&#13;
+</span>		&#13;
+&#13;
+&#13;
+					
+
+
+		&#13;
+							&#13;
+		&#13;
+		&#13;
+		&#13;
+</div>&#13;
+&#13;
+	&#13;
+	</div></body></html>

@@ -1,0 +1,72 @@
+---
+layout:     post
+title: 	    "Coops it-direktør irriteret over certifikat-træk fra Google"
+post_author:	    Jakob Møllerhøj
+post_date:	    Thu, 07 May 2015 04:29:39 +0000
+post_site:	    www.version2.dk 
+post_link:	    http://www.version2.dk/artikel/coops-it-direktoer-irriteret-over-certifikat-traek-fra-google-175144?utm_medium=feed&utm_source=version2.dk&utm_campaign=it_nyheder
+---
+<html><body><div><section class="body">
+    <p>I den seneste udgave af Chrome har en stribe danske hjemmesider fået en rød streg sat henover den hængelås, der normalt skal vise brugeren, at der er oprettet en sikker forbindelse til en server. Men selvom hjemmesider, der ikke tidligere har haft det, nu får sat en rød streg over hængelåsen i Chrome, betyder det ikke nødvendigvis, at forbindelsen pludseligt er blevet usikker. Men den kan måske blive det.</p>
+
+<p>En Version2-læser, har bemærket, at en af de hjemmesider, der har fået en streg over hængelåsen, er coopbank.dk. Det er online facaden til Coop Bank, hvorfra der kan klikkes videre ind i netbanken. Selve netbanken er en adskilt standardløsning.</p>
+
+<p>»Det der selvfølgeligt er uheldigt, det er, at brugerne får et indtryk af, at det er en usikker forbindelse, og at den ikke er krypteret. Og det er ikke tilfældet. Forbindelsen er lige så sikker, som den hele tiden har været,« siger it-direktør i Coop René Munk-Nissen.</p>
+
+<p>Selvom forbindelsen er krypteret og certifikatet på Coops Banks side er gyldigt, får Chrome-brugere nu alligevel visuelt at vide, at noget er galt via den røde streg henover hængelåsen, når de havner på hjemmesiden. Det skyldes, at Google med den seneste opdatering til Chrome browseren har øget kravene til de certifikater, hjemmesiderne anvender.</p>
+
+<p>Hvis certifikaterne anvender en SHA-1 signatur og de udløber 1. januar 2017 og frem, så kommer der rød streg over hængelåsen fra Chrome version 42. Google anser nemlig hash-algortimen SHA-1 som et kommende sikkerhedsproblem og virksomheden vil derfor gerne have luget ud blandt de længereløbende certifikater.</p>
+
+<p>Udløber SHA-1 certifikatet fra 1. januar 2016 til 31. december 2016, så betragter Chrome certifikatet som ‘sikkert, men med mindre fejl’. Det resulterer visuelt i en hængelås med en gul trekant over.</p>
+
+<p>Og udløber SHA-1 certifikatet inden 1. januar 2016 - altså i 2015 - så dukker der ikke umiddelbart nogen visuelle advarsler op. Det gjorde der i hvert fald ikke i Version2's besøg på cpr.dk med Chrome version 42. Sitet anvender også et SHA-1 certifikat, men det udløber til december i år.</p>
+
+<h2>Google meldte SHA-1 udfasning ud i september</h2>
+
+<p>Google har proklameret tiltaget mod SHA-1 certifikaterne tilbage i september 2014 i et <a href="http://googleonlinesecurity.blogspot.co.uk/2014/09/gradually-sunsetting-sha-1.html">blogindlæg</a>. I tidslinjen i blogindlægget nævnes Chrome version 41 som der, hvor stregen kommer over hængelåsen, men det lader først til at være sket i version 42, hvilket den italienske sikkerhedsekspert Filippo Valsorda bemærker i et <a href="https://blog.filippo.io/the-unofficial-chrome-sha1-faq/">blogindlæg</a> om Googles tiltag.</p>
+
+<p>Virksomhedens begrundelse for at stramme skruen mod SHA-1 certifikaterne er, at det nok vil være for let at bryde krypteringen bag certifikaterne i fremtiden.
+<figure class="plugin right zoomable"><img data-original-image="http://www.version2.dk/sites/v2/files/coopbank-crop.png" src="http://www.version2.dk/sites/v2/files/styles/medium/public/coopbank-crop.png?itok=gk3uYgwo" alt=""/><figcaption>I Chrome version 42 risikerer brugerne at blive mødt med en rød streg henover hængelåsen, hvis hjemmesiden anvender et SHA-1 certifikat </figcaption></figure>
+Specifikt nævner Google truslen om kollisions-angreb, som et problem. Det vil sige, at to forskellige input kørt gennem SHA-1 algoritmen producerer det samme output, hvilket er skidt i en kryptografisk sammenhæng.</p>
+
+<p>Sikkerhedsmanden <a href="https://www.schneier.com/blog/archives/2012/10/when_will_we_se.html">Bruce Schneier har tidligere blogget</a> om netop denne udfordring, der vokser i takt med processorkraften.</p>
+
+<h2>Det er gået galt før</h2>
+
+<p>Som eksempel på konsekvenserne, når en algoritme (som SHA-1) brugt til signering af certifikater, bliver knækket, henviser Google i blogindlægget til <a href="http://www.win.tue.nl/hashclash/rogue-ca/">et forskningspapir fra 2008</a>.</p>
+
+<p>Blandt forfatterne er blandt andet talsmanden for TOR-netværket Jacob Appelbaum. Papiret handler om en anden hash-algoritme MD5.</p>
+
+<p>Forfatterne fortæller, hvordan de har opdaget en sårbarhed, der som følge af netop hash-kollisioner i MD5 gør dem i stand til at signere et hvilket som helst certifikat og få en browser til at godtage det. Det betyder, at de kan udgive sig for at være et vilkårligt site på nettet, eksempelvis en netbank.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/MD5">MD5</a> bliver ikke anset som egnet til at signere SSL-certifikater med længere.</p>
+
+<p>Ved at begynde udfasningen af SHA-1 forsøger Google at komme af med algoritmen, inden angreb bliver praktisk ladsiggørlige som med MD5.</p>
+
+<p>Og det synes direktør i Solido Networks med forstand på netværkssikkerhed, Henrik Kramshøj, er helt fornuftigt.</p>
+
+<p>»Det er et super tiltag til at forbedre sikkerheden. Hvis man har et certifikat, som løber så længe, og IKKE bruger noget bedre end SHA-1, skal man skifte - så dermed bør man allerede nu tage det skridt, at fornye certifikatet,« skriver han i en mail.</p>
+
+<h2>Coop: Det er irriterende</h2>
+
+<p>René Munk-Nissen fra Coop deler ikke begejstringen.</p>
+
+<p>»Jeg synes faktisk, det er lidt irriterende,« siger han.</p>
+
+<p>Til trods for, at Googles fremgangsmåde måtte vække irritation, så bevirker den tilsyneladende også, at SHA-1 certifikatet nu bliver opdateret hos Coop. Ikke bare for bank-hjemmesiden, men også for webshoppen, der også har en rød streg over hængelåsen.</p>
+
+<p>»Det er noget, vi arbejder på at få fjernet, så vi ikke går i rødt så at sige. Vi mener ikke tilstanden er rød, og derfor er jeg lidt generet over den røde farve. Men nu er den der, og jeg medgiver, det giver noget forvirring, hvilket ikke er heldigt,« siger René Munk-Nissen.</p>
+
+<p>Inden den seneste udgave af Chrome satte en rød streg over hængelåsen i visse tilfælde, så var der ifølge tidsplanen i Googles blogindlæg fra 2014 en gul trekant ved hængelåsen. Når Coop ikke har skiftet certifikatet endnu, så handler det om prioriteringer, forklarer René Munk-Nissen.</p>
+
+<p>»Vi prioriterer selvfølgeligt hele tiden vores it-indsats. Og vi er igang med det her, så i løbet af nogle ganske få måneder, så har vi fuldført en opgradering til det nye certifikat.«</p>
+
+<p>En ny og mere sikker hashfunktion i SHA-2 familien er SHA256. <a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Sikkerhedsvirksomheden Qualys blogger mere om SHA256 og udfasningen af SHA-1 her</a></p>
+
+<p>Version2 har også forsøgt at få en kommentar fra <a href="https://yousee.dk/mityousee.aspx">Yousee</a> og <a href="https://erhvervsstyrelsen.dk/">Erhvervsstyrelsen</a>, der begge har fået en rød streg over hængelåsen i Chrome version 42 som følge af, hvad der ser ud til at skyldes SHA-1 certifikater, der udløber efter 2016. Det er ikke lykkes at få en kommentar fra de to organisationer.</p>
+  </section>
+
+  
+  
+  
+  </div></body></html>

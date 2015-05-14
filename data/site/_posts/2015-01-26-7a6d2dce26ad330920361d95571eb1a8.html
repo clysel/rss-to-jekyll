@@ -1,0 +1,38 @@
+---
+layout:     post
+title: 	    "XenServer at FOSDEM"
+post_author:	    
+post_date:	    Mon, 26 Jan 2015 17:57:30 +0000
+post_site:	    xenserver.org 
+post_link:	    http://xenserver.org/blog/entry/xenserver-at-fosdem.html
+---
+<html><body><div><div class="blog-text clearfix prel mtm mbm">&#13;
+&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			&#13;
+			<p>Having just released <a href="http://xenserver.org/blog/entry/creedence-launches-as-xenserver-6-5.html">Creedence as XenServer 6.5</a>, 2015 has definitely started off with a bang. In 2014 the focus for XenServer was on a platform refresh, and creating a solid platform for future work. For me, 2015 is about enabling the ecosystem to be successful with XenServer, and that's where <a href="https://fosdem.org/2015/">FOSDEM</a> comes in. For those unfamiliar with FOSDEM, it's the Free and Open Source Developers European Meeting, and many of the most influential projects will have strong representation. Many of those same projects have strong relationships with other hypervisors, but not necessarily with XenServer. For those projects, XenServer needs to demonstrate its relevance, and I hope through a set of demos within the <a href="http://xenproject.org/">Xen Project</a> stand to provide exactly that.</p>&#13;
+<h2>Demo #1 - Provisioning Efficiency</h2>&#13;
+<p>XenServer is a hypervisor, and as such is first and foremost a provisioning target. That means it needs to work well with provisioning solutions and their respective template paradigms. Some of you may have seen me present at various events on the topic of hypervisor selection in various cloud provisioning tools. One of the core workflow items for all cloud solutions is the ability to take a template and provision it consistently to the desired hypervisor. In <a href="http://cloudstack.apache.org/">Apache CloudStack</a> with XenServer for example, those templates are <a href="http://en.wikipedia.org/wiki/VHD_%28file_format%29">VHD files</a>. Unfortunately, XenServer by default exports <a href="http://fileinfo.com/extension/xva">XVA files</a>, not native VHD; which makes the template process for CloudStack needlessly difficult.</p>&#13;
+<p>This is where a technology like <a href="https://packer.io/">Packer</a> comes in. Some of the XenServer engineers have been working on a Packer integration to support Vagrant. That's cool, but I'm also looking at this from the perspective of other tools and so will be showing Packer creating a <a href="http://seven.centos.org/">CentOS 7</a> template which could be used anywhere. That template would then be provisioned and as part of the post-provisioning configuration management become a "something" with the addition of applications.</p>&#13;
+<h2>Demo #2 - Application Containerization</h2>&#13;
+<p>Once I have my template from Packer, and have provisioned it into a XenServer 6.5 host, the next step is application management. For this I'm going to use <a href="http://www.ansible.com/home">Ansible</a> to personalize the VM, and to add in some applications which are containerized by <a href="https://www.docker.com/">Docker</a>. There has been some discussion in the marketplace about <a href="http://www.linuxjournal.com/content/containers%E2%80%94not-virtual-machines%E2%80%94are-future-cloud">containers replacing VMs</a>, and I really see proper use of containers as being efficient use of VMs not as a replacement for a VM. Proper container usage is really proper application management, and understanding when to use which technology. For me this means that a host is a failure point which contains VMs. A VM represents a security and performance wrapper for a given tenant and their applications. Within a VM applications are provisioned, and where containerization of the applications makes sense, it should be used.</p>&#13;
+<p>System administrators should be able to directly manage each of these three "containers" from the same pane of glass, and as part of my demo, I'll be showing just that using XenCenter. XenCenter has a simple GUI from which host and VM level management can be performed, and which is in the process of being extended to include Dockerized containers.</p>&#13;
+<p>With this as the demo backdrop, I encourage anyone planning on attending FOSDEM to please stop by and ask about the work we've done with Creedence and also where we're thinking of going. If you're a contributor to a project and would like to talk more about how integrating with XenServer might make sense, either for your project or as something we should be thinking about, please do feel free to reach out to me. Of course if you're not planning on being at FOSDEM, but know folks who are, please do feel free to have them seek me out. We want XenServer to be a serious contender in every data center, but if we don't know about issues facing your favorite projects, we can't readily work to resolve them.</p>&#13;
+<p>btw, if you'd like to plan anything around FOSDEM, please either comment on this blog, or contact me on Twitter as <a href="https://twitter.com/xenserverarmy">@XenServerArmy</a>.</p>&#13;
+<p><span>-tim     </span></p>&#13;
+			&#13;
+			&#13;
+										&#13;
+			&#13;
+					</div>&#13;
+&#13;
+		&#13;
+					&#13;
+			
+</div></body></html>

@@ -1,0 +1,65 @@
+---
+layout:     post
+title: 	    "Hip hurra: Brugerne har tryglet Google om at fikse løjerlig billedfejl i 1 år"
+post_author:	    Jakob Møllerhøj
+post_date:	    Tue, 05 May 2015 04:29:38 +0000
+post_site:	    www.version2.dk 
+post_link:	    http://www.version2.dk/artikel/hip-hurra-loejerlig-billedfejl-i-google-hangouts-har-frustreret-brugerne-i-et-aar-172584?utm_medium=feed&utm_source=version2.dk&utm_campaign=it_nyheder
+---
+<html><body><div><section class="body">
+    <p>Her til maj er det et år siden, en <a href="https://productforums.google.com/forum/#!topic/hangouts/5FKCFGr-UdY%5B201-225%5D">fejltråd vedrørende billeder blev åbnet på Googles produktforum</a> for besked-app'en Hangouts. Med app'en forsøger Google at samle tekst-, video og lyd-kommunikation i virksomhedens egen app på mobile enheder.</p>
+
+<p>Mens månederne er gået har stadig flere frustrerede brugere klaget deres nød til Google i tråden, der i skrivende stund tæller 227 indlæg, hvor det seneste er fra 3. maj 3015.</p>
+
+<p>Fejlen, der stadig er aktuel, berører ifølge indlæggene også nye mobiltelefoner som Galaxy S6 fra Samsung.
+(Exchangeable image file format)
+Det er ikke alle enheder, der døjer med billedproblemet. Men de der gør, vil opleve, at når et billede bliver taget via Hangouts-app’en i portrait-mode (altså stående) og sendt, så bliver billedet lagt ned (landscape). Fejlen optræder ikke hver gang på alle enheder, men i Version2's test på en Sony Xperia Z3 lader billedet dog til at blive lagt fejlagtigt ned langt størstedelen af gangene.</p>
+
+<p>I debattråden udtrykker flere brugere stor frustration over det, nogen oplever som ligegyldighed fra Googles side i forhold til at rette billedproblemet. I et indlæg dateret 30. april udtrykker en bruger, Vahdyx, sig således:</p>
+
+
+
+<p>»Jeg har langsomt vænnet mig fra Google services. Jeg er ved at blive træt af kvaliteten. Jeg planlægger at gå mod iPhone 6S Plus, jeg er allerede begyndt at bruge Microsoft email, etc. Det er vanskeligt at gøre, fordi jeg elsker Google services så meget, men jeg ønsker ikke at blive ved med at støtte Google, når de ignorerer problemer i flere år.«</p>
+
+<p>I tråden, som har været omtalt på Version2, da den var mindre velvoksen, har en udvikler der lader til at komme fra Google bedt brugerne byde ind med oplysninger om telefonmodel, Hangouts-version etc.</p>
+
+<h3>App-ekspert: Det lyder utroligt</h3>
+
+<p>Version2 har forelagt solutions architect og partner i app-virksomheden iDeal Development Esben Bjerregaard debattråden med billedfejlen, der blev åbnet for et år siden.</p>
+
+<p>»Det lyder helt utroligt,« er hans umiddelbare reaktion i en mail.</p>
+
+<p>Esben Bjerregaard undrer sig over, at Google bedt om brugernes input i forhold til en fejl, der ser ud til at berøre en bred vifte af smartphones. Herunder gængse Android-modeller som Samsung Galaxy S6 og Sony Xperia Z3.</p>
+
+<p>»Hvorfor køber Google ikke bare et par stykker af de problematiske enheder hjem og tester? Det havde vi gjort,« skriver han.</p>
+
+<p>Men Esben Bjerregaard har andet end løftede øjenbryn til overs for de roterede billeder i Hangouts. Han har også et bud på, hvad problemet skyldes. Det kan hænge sammen med metadata i de digitale billeder kaldet Exif. Dataene knytter sig til billederne og kan eksempelvis indeholde info om kameraets orientering og telefonens position.</p>
+
+<p>»Mit gæt er at Google anvender Exif-dataene, og at nogle telefonproducenter ganske enkelt ikke har 100% styr på dem (bruger producenterne f.eks kompas eller gyroskop kan det i det hele taget godt gå galt). Et simpelt fix ville formentlig være at kigge på billedets dimensioner i stedet for, men måske er det FOR simpelt,« skriver Esben Bjerregaard med henvisning til, om billederne er længst på  x- eller y-aksen med henblik på at opklare, hvorvidt der er tale om portrait eller landscape.</p>
+
+<p>Esben Bjerregaard har sendt to billeder taget med en Sony D5803 (Z3 Compact) til Version2. Billeder er taget i portrait-mode, men i Exif-dataene for det ene af billederne står der landscape.</p>
+
+<p>»Det kan selvfølgelig også være at det er et helt andet problem. Men uanset hvad kan vi se at Sony, på deres topmodel i hvert fald, ikke har styr på Exif-dataene,« skriver Esben Bjerregaard.</p>
+
+<h3>Måske Google ikke gider workaround</h3>
+
+<p>Og såfremt det er Exif-dataene, der er forklaringen på, hvorfor billederne ender med at vende forkert, når Hangout-brugere trykker på send-knappen, så ligger fejlen ikke i Hangouts som sådan, men i den måde i hvert fald nogle telefonmodeller udfylder Exif-data på.</p>
+
+<p>»Det er telefonproducenterne (eller måske endda kameraproducenten, da man ser det på flere forskellige producenters telefoner), der har fejlen. En ændring i Hangout-billedehåndteringen ville derfor være et workaround, og det er Google måske ikke meget for,« skriver Esben Bjerregaard.</p>
+
+<p>Når det er sagt undrer han sig dog over, at Google tilsyneladende forlader sig på Exif-dataene i Hangouts, når billedet bliver taget via app'en. Flere brugere melder om, at billeder ikke bliver fejlagtigt roteret, hvis det bliver vedhæftet fra en galleri-funktion på telefonen i stedet for at blive taget med kameraet.</p>
+
+<p>»Måske er det simpelthen fordi der ikke er ret mange der anvender Exif dataene på samme måde som google gør her. (Vi har f.eks aldrig anvendt Exif-dataene. Simpelthen fordi der er for stor forskel på, hvordan de bliver udfyldt). Det lyder heller ikke til at der er problemer hvis billedet vælges fra galleri på telefonen, så måske anvendes Exif-dataene ikke i denne sammenhæng,« skriver Esben Bjerregaard.</p>
+
+<p>Googles kontaktperson i Danmark Christine Sørensen oplyser, at virksomheden arbejder på at løse problemet. Men derudover har hun ikke noget bud på, 'hvad det præcis er, der driller, eller hvornår det bliver løst.'</p>
+
+<p>Følgende lille video er optaget af journalist Elías Christian Lundström og viser problemet på en Sony Xperia Z3. 
+<section class="video plugin"/></p>
+
+
+
+<p/></section>
+  
+
+  
+      </div></body></html>

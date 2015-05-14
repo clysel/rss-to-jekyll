@@ -1,0 +1,23 @@
+---
+layout:     post
+title: 	    "Rapport frikender Truecrypt: Ingen bagdøre eller alvorlige svagheder"
+post_author:	    Martin Bernth
+post_date:	    Tue, 07 Apr 2015 13:58:38 +0000
+post_site:	    www.version2.dk 
+post_link:	    http://www.version2.dk/artikel/ny-rapport-om-truecrypt-ingen-bagdoere-eller-alvorlige-svagheder-135018?utm_medium=feed&utm_source=version2.dk&utm_campaign=it_nyheder
+---
+<html><body><div><section class="body">
+    <p>Et hold krypteringseksperter fra softwarerevisionsfirmaet NCC Group har gennemgået koden til krypteringsværktøjet Truecrypt og nu er <a href="https://opencryptoaudit.org/reports/TrueCrypt_Phase_II_NCC_OCAP_final.pdf">den endelige rapport klar.</a></p>
+
+
+
+<p>Ifølge <a href="http://blog.cryptographyengineering.com/2015/04/truecrypt-report.html">krypteringsekspert og professor ved det amerikanske John Hopkins Universitet Matthew Green lyder dommen</a> overordnet, at værktøjet er bestået, og at det ikke indeholder nogen bevidst oprettede bagdøre eller alvorlige svagheder og derfor i langt de fleste tilfælde vil kunne yde en tilfredsstillende beskyttelse.</p>
+
+<p>Dog fandt eksperterne et problem med Windows-versionen af Truecrypts tilfældighedsgenerator, som ikke registrerede, hvis Windows’ eget <a href="https://msdn.microsoft.com/en-us/library/ms867086.aspx">Crypto API</a>, ikke loader ordentligt.</p>
+
+<p>Programmet gør brug af api’et til at generere tilfældige tal - en central del af et krypteringsværktøj - og burde derfor registrere en så vigtig brist.</p>
+
+<p>Sandsynligheden for at fejlen opstår er dog ekstremt lille og betyder ikke, at kryptering helt udebliver, da andre 'tilfældighedskilder' også inddrages, så værktøjet er derfor overordnet set at betragte som generelt sikkert at bruge, lyder det fra Matthew Green.</p>
+  </section>
+
+      </div></body></html>
