@@ -21,8 +21,8 @@ post_site:	    $(echo $link|cut -d/ -f3)
 post_link:	    $link
 ---
 EOF
-      ( cd python-readability-master ; python -m readability.readability -u $link >> $data_path/../$url  )
-      echo $easy_title >> links
+      ( cd python-readability-master ; python -m readability.readability -u $link >> ../$data_path/$url  )
+      echo $easy_title >> $data_path/links
 
   fi 
   done
