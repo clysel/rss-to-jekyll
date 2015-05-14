@@ -4,6 +4,8 @@ Requires:
 
 apt-get install xml2 jekyll
 
-and (python-readability)[https://github.com/buriy/python-readability]
+and [python-readability](https://github.com/buriy/python-readability) which is included
+
+= Setup
 
 A cron task can schedule job.sh
